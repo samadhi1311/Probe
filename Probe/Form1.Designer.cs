@@ -442,7 +442,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(89, 19);
+            this.label2.Location = new System.Drawing.Point(92, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 21);
             this.label2.TabIndex = 1;
@@ -498,12 +498,12 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label9.Location = new System.Drawing.Point(338, 145);
+            this.label9.Location = new System.Drawing.Point(296, 145);
             this.label9.Name = "label9";
             this.label9.Padding = new System.Windows.Forms.Padding(3);
-            this.label9.Size = new System.Drawing.Size(425, 23);
+            this.label9.Size = new System.Drawing.Size(508, 27);
             this.label9.TabIndex = 2;
             this.label9.Text = "Probe includes support for major web browsers on Microsoft Windows";
             // 
@@ -512,13 +512,13 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label1.Location = new System.Drawing.Point(376, 68);
+            this.label1.Location = new System.Drawing.Point(315, 68);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(3);
-            this.label1.Size = new System.Drawing.Size(343, 53);
+            this.label1.Size = new System.Drawing.Size(470, 70);
             this.label1.TabIndex = 0;
             this.label1.Text = "Select Your Browser";
             // 
@@ -588,7 +588,7 @@
             this.label_mostVisited_result1_lastVisit.Name = "label_mostVisited_result1_lastVisit";
             this.label_mostVisited_result1_lastVisit.Size = new System.Drawing.Size(219, 15);
             this.label_mostVisited_result1_lastVisit.TabIndex = 0;
-            this.label_mostVisited_result1_lastVisit.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.label_mostVisited_result1_lastVisit.Text = " ";
             this.label_mostVisited_result1_lastVisit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_mostVisited_result1_count
@@ -598,20 +598,23 @@
             this.label_mostVisited_result1_count.Name = "label_mostVisited_result1_count";
             this.label_mostVisited_result1_count.Size = new System.Drawing.Size(130, 15);
             this.label_mostVisited_result1_count.TabIndex = 0;
-            this.label_mostVisited_result1_count.Text = "Visits count: 19";
+            this.label_mostVisited_result1_count.Text = " ";
             this.label_mostVisited_result1_count.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // linkLabel_mostVisited_result1_url
             // 
             this.linkLabel_mostVisited_result1_url.AutoEllipsis = true;
             this.linkLabel_mostVisited_result1_url.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel_mostVisited_result1_url.LinkColor = System.Drawing.Color.DodgerBlue;
             this.linkLabel_mostVisited_result1_url.Location = new System.Drawing.Point(95, 38);
             this.linkLabel_mostVisited_result1_url.Name = "linkLabel_mostVisited_result1_url";
             this.linkLabel_mostVisited_result1_url.Size = new System.Drawing.Size(239, 17);
             this.linkLabel_mostVisited_result1_url.TabIndex = 2;
             this.linkLabel_mostVisited_result1_url.TabStop = true;
-            this.linkLabel_mostVisited_result1_url.Text = "https://google.com/searchquery=abcdefgh";
+            this.linkLabel_mostVisited_result1_url.Text = " ";
             this.linkLabel_mostVisited_result1_url.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabel_mostVisited_result1_url.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.linkLabel_mostVisited_result1_url.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_mostVisited_result1_url_LinkClicked);
             // 
             // label_mostVisited_result1_title
             // 
@@ -621,7 +624,7 @@
             this.label_mostVisited_result1_title.Name = "label_mostVisited_result1_title";
             this.label_mostVisited_result1_title.Size = new System.Drawing.Size(204, 23);
             this.label_mostVisited_result1_title.TabIndex = 0;
-            this.label_mostVisited_result1_title.Text = "www.google.com";
+            this.label_mostVisited_result1_title.Text = " ";
             this.label_mostVisited_result1_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox_mostVisited_result1_favicon
@@ -656,7 +659,7 @@
             this.label_mostVisited_result2_lastVisit.Name = "label_mostVisited_result2_lastVisit";
             this.label_mostVisited_result2_lastVisit.Size = new System.Drawing.Size(219, 15);
             this.label_mostVisited_result2_lastVisit.TabIndex = 0;
-            this.label_mostVisited_result2_lastVisit.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.label_mostVisited_result2_lastVisit.Text = " ";
             this.label_mostVisited_result2_lastVisit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_mostVisited_result2_count
@@ -666,20 +669,23 @@
             this.label_mostVisited_result2_count.Name = "label_mostVisited_result2_count";
             this.label_mostVisited_result2_count.Size = new System.Drawing.Size(130, 15);
             this.label_mostVisited_result2_count.TabIndex = 0;
-            this.label_mostVisited_result2_count.Text = "Visits count: 19";
+            this.label_mostVisited_result2_count.Text = " ";
             this.label_mostVisited_result2_count.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // linkLabel_mostVisited_result2_url
             // 
             this.linkLabel_mostVisited_result2_url.AutoEllipsis = true;
             this.linkLabel_mostVisited_result2_url.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel_mostVisited_result2_url.LinkColor = System.Drawing.Color.DodgerBlue;
             this.linkLabel_mostVisited_result2_url.Location = new System.Drawing.Point(95, 38);
             this.linkLabel_mostVisited_result2_url.Name = "linkLabel_mostVisited_result2_url";
             this.linkLabel_mostVisited_result2_url.Size = new System.Drawing.Size(239, 17);
             this.linkLabel_mostVisited_result2_url.TabIndex = 2;
             this.linkLabel_mostVisited_result2_url.TabStop = true;
-            this.linkLabel_mostVisited_result2_url.Text = "https://google.com/searchquery=abcdefgh";
+            this.linkLabel_mostVisited_result2_url.Text = " ";
             this.linkLabel_mostVisited_result2_url.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabel_mostVisited_result2_url.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.linkLabel_mostVisited_result2_url.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_mostVisited_result2_url_LinkClicked);
             // 
             // label_mostVisited_result2_title
             // 
@@ -689,7 +695,7 @@
             this.label_mostVisited_result2_title.Name = "label_mostVisited_result2_title";
             this.label_mostVisited_result2_title.Size = new System.Drawing.Size(204, 23);
             this.label_mostVisited_result2_title.TabIndex = 0;
-            this.label_mostVisited_result2_title.Text = "www.google.com";
+            this.label_mostVisited_result2_title.Text = " ";
             this.label_mostVisited_result2_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox_mostVisited_result2_favicon
@@ -724,7 +730,7 @@
             this.label_mostVisited_result3_lastVisit.Name = "label_mostVisited_result3_lastVisit";
             this.label_mostVisited_result3_lastVisit.Size = new System.Drawing.Size(219, 15);
             this.label_mostVisited_result3_lastVisit.TabIndex = 0;
-            this.label_mostVisited_result3_lastVisit.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.label_mostVisited_result3_lastVisit.Text = " ";
             this.label_mostVisited_result3_lastVisit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_mostVisited_result3_count
@@ -734,20 +740,23 @@
             this.label_mostVisited_result3_count.Name = "label_mostVisited_result3_count";
             this.label_mostVisited_result3_count.Size = new System.Drawing.Size(130, 15);
             this.label_mostVisited_result3_count.TabIndex = 0;
-            this.label_mostVisited_result3_count.Text = "Visits count: 19";
+            this.label_mostVisited_result3_count.Text = " ";
             this.label_mostVisited_result3_count.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // linkLabel_mostVisited_result3_url
             // 
             this.linkLabel_mostVisited_result3_url.AutoEllipsis = true;
             this.linkLabel_mostVisited_result3_url.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel_mostVisited_result3_url.LinkColor = System.Drawing.Color.DodgerBlue;
             this.linkLabel_mostVisited_result3_url.Location = new System.Drawing.Point(95, 38);
             this.linkLabel_mostVisited_result3_url.Name = "linkLabel_mostVisited_result3_url";
             this.linkLabel_mostVisited_result3_url.Size = new System.Drawing.Size(239, 17);
             this.linkLabel_mostVisited_result3_url.TabIndex = 2;
             this.linkLabel_mostVisited_result3_url.TabStop = true;
-            this.linkLabel_mostVisited_result3_url.Text = "https://google.com/searchquery=abcdefgh";
+            this.linkLabel_mostVisited_result3_url.Text = " ";
             this.linkLabel_mostVisited_result3_url.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabel_mostVisited_result3_url.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.linkLabel_mostVisited_result3_url.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_mostVisited_result3_url_LinkClicked);
             // 
             // label_mostVisited_result3_title
             // 
@@ -757,7 +766,7 @@
             this.label_mostVisited_result3_title.Name = "label_mostVisited_result3_title";
             this.label_mostVisited_result3_title.Size = new System.Drawing.Size(204, 23);
             this.label_mostVisited_result3_title.TabIndex = 0;
-            this.label_mostVisited_result3_title.Text = "www.google.com";
+            this.label_mostVisited_result3_title.Text = " ";
             this.label_mostVisited_result3_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox_mostVisited_result3_favicon
@@ -792,7 +801,7 @@
             this.label_mostVisited_result4_lastVisit.Name = "label_mostVisited_result4_lastVisit";
             this.label_mostVisited_result4_lastVisit.Size = new System.Drawing.Size(219, 15);
             this.label_mostVisited_result4_lastVisit.TabIndex = 0;
-            this.label_mostVisited_result4_lastVisit.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.label_mostVisited_result4_lastVisit.Text = " ";
             this.label_mostVisited_result4_lastVisit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_mostVisited_result4_count
@@ -802,20 +811,23 @@
             this.label_mostVisited_result4_count.Name = "label_mostVisited_result4_count";
             this.label_mostVisited_result4_count.Size = new System.Drawing.Size(130, 15);
             this.label_mostVisited_result4_count.TabIndex = 0;
-            this.label_mostVisited_result4_count.Text = "Visits count: 19";
+            this.label_mostVisited_result4_count.Text = " ";
             this.label_mostVisited_result4_count.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // linkLabel_mostVisited_result4_url
             // 
             this.linkLabel_mostVisited_result4_url.AutoEllipsis = true;
             this.linkLabel_mostVisited_result4_url.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel_mostVisited_result4_url.LinkColor = System.Drawing.Color.DodgerBlue;
             this.linkLabel_mostVisited_result4_url.Location = new System.Drawing.Point(95, 38);
             this.linkLabel_mostVisited_result4_url.Name = "linkLabel_mostVisited_result4_url";
             this.linkLabel_mostVisited_result4_url.Size = new System.Drawing.Size(239, 17);
             this.linkLabel_mostVisited_result4_url.TabIndex = 2;
             this.linkLabel_mostVisited_result4_url.TabStop = true;
-            this.linkLabel_mostVisited_result4_url.Text = "https://google.com/searchquery=abcdefgh";
+            this.linkLabel_mostVisited_result4_url.Text = " ";
             this.linkLabel_mostVisited_result4_url.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabel_mostVisited_result4_url.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.linkLabel_mostVisited_result4_url.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_mostVisited_result4_url_LinkClicked);
             // 
             // label_mostVisited_result4_title
             // 
@@ -825,7 +837,7 @@
             this.label_mostVisited_result4_title.Name = "label_mostVisited_result4_title";
             this.label_mostVisited_result4_title.Size = new System.Drawing.Size(204, 23);
             this.label_mostVisited_result4_title.TabIndex = 0;
-            this.label_mostVisited_result4_title.Text = "www.google.com";
+            this.label_mostVisited_result4_title.Text = " ";
             this.label_mostVisited_result4_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox_mostVisited_result4_favicon
@@ -860,7 +872,7 @@
             this.label_mostVisited_result5_lastVisit.Name = "label_mostVisited_result5_lastVisit";
             this.label_mostVisited_result5_lastVisit.Size = new System.Drawing.Size(219, 15);
             this.label_mostVisited_result5_lastVisit.TabIndex = 0;
-            this.label_mostVisited_result5_lastVisit.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.label_mostVisited_result5_lastVisit.Text = " ";
             this.label_mostVisited_result5_lastVisit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_mostVisited_result5_count
@@ -870,20 +882,23 @@
             this.label_mostVisited_result5_count.Name = "label_mostVisited_result5_count";
             this.label_mostVisited_result5_count.Size = new System.Drawing.Size(130, 15);
             this.label_mostVisited_result5_count.TabIndex = 0;
-            this.label_mostVisited_result5_count.Text = "Visits count: 19";
+            this.label_mostVisited_result5_count.Text = " ";
             this.label_mostVisited_result5_count.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // linkLabel_mostVisited_result5_url
             // 
             this.linkLabel_mostVisited_result5_url.AutoEllipsis = true;
             this.linkLabel_mostVisited_result5_url.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel_mostVisited_result5_url.LinkColor = System.Drawing.Color.DodgerBlue;
             this.linkLabel_mostVisited_result5_url.Location = new System.Drawing.Point(95, 38);
             this.linkLabel_mostVisited_result5_url.Name = "linkLabel_mostVisited_result5_url";
             this.linkLabel_mostVisited_result5_url.Size = new System.Drawing.Size(239, 17);
             this.linkLabel_mostVisited_result5_url.TabIndex = 2;
             this.linkLabel_mostVisited_result5_url.TabStop = true;
-            this.linkLabel_mostVisited_result5_url.Text = "https://google.com/searchquery=abcdefgh";
+            this.linkLabel_mostVisited_result5_url.Text = " ";
             this.linkLabel_mostVisited_result5_url.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabel_mostVisited_result5_url.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.linkLabel_mostVisited_result5_url.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_mostVisited_result5_url_LinkClicked);
             // 
             // label_mostVisited_result5_title
             // 
@@ -893,7 +908,7 @@
             this.label_mostVisited_result5_title.Name = "label_mostVisited_result5_title";
             this.label_mostVisited_result5_title.Size = new System.Drawing.Size(204, 23);
             this.label_mostVisited_result5_title.TabIndex = 0;
-            this.label_mostVisited_result5_title.Text = "www.google.com";
+            this.label_mostVisited_result5_title.Text = " ";
             this.label_mostVisited_result5_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox_mostVisited_result5_favicon
@@ -928,7 +943,7 @@
             this.label_mostVisited_result6_lastVisit.Name = "label_mostVisited_result6_lastVisit";
             this.label_mostVisited_result6_lastVisit.Size = new System.Drawing.Size(219, 15);
             this.label_mostVisited_result6_lastVisit.TabIndex = 0;
-            this.label_mostVisited_result6_lastVisit.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.label_mostVisited_result6_lastVisit.Text = " ";
             this.label_mostVisited_result6_lastVisit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_mostVisited_result6_count
@@ -938,20 +953,23 @@
             this.label_mostVisited_result6_count.Name = "label_mostVisited_result6_count";
             this.label_mostVisited_result6_count.Size = new System.Drawing.Size(130, 15);
             this.label_mostVisited_result6_count.TabIndex = 0;
-            this.label_mostVisited_result6_count.Text = "Visits count: 19";
+            this.label_mostVisited_result6_count.Text = " ";
             this.label_mostVisited_result6_count.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // linkLabel_mostVisited_result6_url
             // 
             this.linkLabel_mostVisited_result6_url.AutoEllipsis = true;
             this.linkLabel_mostVisited_result6_url.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel_mostVisited_result6_url.LinkColor = System.Drawing.Color.DodgerBlue;
             this.linkLabel_mostVisited_result6_url.Location = new System.Drawing.Point(96, 38);
             this.linkLabel_mostVisited_result6_url.Name = "linkLabel_mostVisited_result6_url";
             this.linkLabel_mostVisited_result6_url.Size = new System.Drawing.Size(239, 17);
             this.linkLabel_mostVisited_result6_url.TabIndex = 2;
             this.linkLabel_mostVisited_result6_url.TabStop = true;
-            this.linkLabel_mostVisited_result6_url.Text = "https://google.com/searchquery=abcdefgh";
+            this.linkLabel_mostVisited_result6_url.Text = " ";
             this.linkLabel_mostVisited_result6_url.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabel_mostVisited_result6_url.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.linkLabel_mostVisited_result6_url.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_mostVisited_result6_url_LinkClicked);
             // 
             // label_mostVisited_result6_title
             // 
@@ -961,7 +979,7 @@
             this.label_mostVisited_result6_title.Name = "label_mostVisited_result6_title";
             this.label_mostVisited_result6_title.Size = new System.Drawing.Size(204, 23);
             this.label_mostVisited_result6_title.TabIndex = 0;
-            this.label_mostVisited_result6_title.Text = "www.google.com";
+            this.label_mostVisited_result6_title.Text = " ";
             this.label_mostVisited_result6_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox_mostVisited_result6_favicon
@@ -996,7 +1014,7 @@
             this.label_mostVisited_result7_lastVisit.Name = "label_mostVisited_result7_lastVisit";
             this.label_mostVisited_result7_lastVisit.Size = new System.Drawing.Size(219, 15);
             this.label_mostVisited_result7_lastVisit.TabIndex = 0;
-            this.label_mostVisited_result7_lastVisit.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.label_mostVisited_result7_lastVisit.Text = " ";
             this.label_mostVisited_result7_lastVisit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_mostVisited_result7_count
@@ -1006,20 +1024,23 @@
             this.label_mostVisited_result7_count.Name = "label_mostVisited_result7_count";
             this.label_mostVisited_result7_count.Size = new System.Drawing.Size(130, 15);
             this.label_mostVisited_result7_count.TabIndex = 0;
-            this.label_mostVisited_result7_count.Text = "Visits count: 19";
+            this.label_mostVisited_result7_count.Text = " ";
             this.label_mostVisited_result7_count.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // linkLabel_mostVisited_result7_url
             // 
             this.linkLabel_mostVisited_result7_url.AutoEllipsis = true;
             this.linkLabel_mostVisited_result7_url.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel_mostVisited_result7_url.LinkColor = System.Drawing.Color.DodgerBlue;
             this.linkLabel_mostVisited_result7_url.Location = new System.Drawing.Point(95, 38);
             this.linkLabel_mostVisited_result7_url.Name = "linkLabel_mostVisited_result7_url";
             this.linkLabel_mostVisited_result7_url.Size = new System.Drawing.Size(239, 17);
             this.linkLabel_mostVisited_result7_url.TabIndex = 2;
             this.linkLabel_mostVisited_result7_url.TabStop = true;
-            this.linkLabel_mostVisited_result7_url.Text = "https://google.com/searchquery=abcdefgh";
+            this.linkLabel_mostVisited_result7_url.Text = " ";
             this.linkLabel_mostVisited_result7_url.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabel_mostVisited_result7_url.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.linkLabel_mostVisited_result7_url.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_mostVisited_result7_url_LinkClicked);
             // 
             // label_mostVisited_result7_title
             // 
@@ -1029,7 +1050,7 @@
             this.label_mostVisited_result7_title.Name = "label_mostVisited_result7_title";
             this.label_mostVisited_result7_title.Size = new System.Drawing.Size(204, 23);
             this.label_mostVisited_result7_title.TabIndex = 0;
-            this.label_mostVisited_result7_title.Text = "www.google.com";
+            this.label_mostVisited_result7_title.Text = " ";
             this.label_mostVisited_result7_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox_mostVisited_result7_favicon
@@ -1064,7 +1085,7 @@
             this.label_mostVisited_result8_lastVisit.Name = "label_mostVisited_result8_lastVisit";
             this.label_mostVisited_result8_lastVisit.Size = new System.Drawing.Size(219, 15);
             this.label_mostVisited_result8_lastVisit.TabIndex = 0;
-            this.label_mostVisited_result8_lastVisit.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.label_mostVisited_result8_lastVisit.Text = " ";
             this.label_mostVisited_result8_lastVisit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_mostVisited_result8_count
@@ -1074,20 +1095,23 @@
             this.label_mostVisited_result8_count.Name = "label_mostVisited_result8_count";
             this.label_mostVisited_result8_count.Size = new System.Drawing.Size(130, 15);
             this.label_mostVisited_result8_count.TabIndex = 0;
-            this.label_mostVisited_result8_count.Text = "Visits count: 19";
+            this.label_mostVisited_result8_count.Text = " ";
             this.label_mostVisited_result8_count.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // linkLabel_mostVisited_result8_url
             // 
             this.linkLabel_mostVisited_result8_url.AutoEllipsis = true;
             this.linkLabel_mostVisited_result8_url.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel_mostVisited_result8_url.LinkColor = System.Drawing.Color.DodgerBlue;
             this.linkLabel_mostVisited_result8_url.Location = new System.Drawing.Point(95, 38);
             this.linkLabel_mostVisited_result8_url.Name = "linkLabel_mostVisited_result8_url";
             this.linkLabel_mostVisited_result8_url.Size = new System.Drawing.Size(239, 17);
             this.linkLabel_mostVisited_result8_url.TabIndex = 2;
             this.linkLabel_mostVisited_result8_url.TabStop = true;
-            this.linkLabel_mostVisited_result8_url.Text = "https://google.com/searchquery=abcdefgh";
+            this.linkLabel_mostVisited_result8_url.Text = " ";
             this.linkLabel_mostVisited_result8_url.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabel_mostVisited_result8_url.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.linkLabel_mostVisited_result8_url.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_mostVisited_result8_url_LinkClicked);
             // 
             // label_mostVisited_result8_title
             // 
@@ -1097,7 +1121,7 @@
             this.label_mostVisited_result8_title.Name = "label_mostVisited_result8_title";
             this.label_mostVisited_result8_title.Size = new System.Drawing.Size(204, 23);
             this.label_mostVisited_result8_title.TabIndex = 0;
-            this.label_mostVisited_result8_title.Text = "www.google.com";
+            this.label_mostVisited_result8_title.Text = " ";
             this.label_mostVisited_result8_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox_mostVisited_result8_favicon
@@ -1132,7 +1156,7 @@
             this.label_mostVisited_result9_lastVisit.Name = "label_mostVisited_result9_lastVisit";
             this.label_mostVisited_result9_lastVisit.Size = new System.Drawing.Size(219, 15);
             this.label_mostVisited_result9_lastVisit.TabIndex = 0;
-            this.label_mostVisited_result9_lastVisit.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.label_mostVisited_result9_lastVisit.Text = " ";
             this.label_mostVisited_result9_lastVisit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_mostVisited_result9_count
@@ -1142,20 +1166,23 @@
             this.label_mostVisited_result9_count.Name = "label_mostVisited_result9_count";
             this.label_mostVisited_result9_count.Size = new System.Drawing.Size(130, 15);
             this.label_mostVisited_result9_count.TabIndex = 0;
-            this.label_mostVisited_result9_count.Text = "Visits count: 19";
+            this.label_mostVisited_result9_count.Text = " ";
             this.label_mostVisited_result9_count.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // linkLabel_mostVisited_result9_url
             // 
             this.linkLabel_mostVisited_result9_url.AutoEllipsis = true;
             this.linkLabel_mostVisited_result9_url.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel_mostVisited_result9_url.LinkColor = System.Drawing.Color.DodgerBlue;
             this.linkLabel_mostVisited_result9_url.Location = new System.Drawing.Point(96, 38);
             this.linkLabel_mostVisited_result9_url.Name = "linkLabel_mostVisited_result9_url";
             this.linkLabel_mostVisited_result9_url.Size = new System.Drawing.Size(239, 17);
             this.linkLabel_mostVisited_result9_url.TabIndex = 2;
             this.linkLabel_mostVisited_result9_url.TabStop = true;
-            this.linkLabel_mostVisited_result9_url.Text = "https://google.com/searchquery=abcdefgh";
+            this.linkLabel_mostVisited_result9_url.Text = " ";
             this.linkLabel_mostVisited_result9_url.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabel_mostVisited_result9_url.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.linkLabel_mostVisited_result9_url.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_mostVisited_result9_url_LinkClicked);
             // 
             // label_mostVisited_result9_title
             // 
@@ -1165,7 +1192,7 @@
             this.label_mostVisited_result9_title.Name = "label_mostVisited_result9_title";
             this.label_mostVisited_result9_title.Size = new System.Drawing.Size(204, 23);
             this.label_mostVisited_result9_title.TabIndex = 0;
-            this.label_mostVisited_result9_title.Text = "www.google.com";
+            this.label_mostVisited_result9_title.Text = " ";
             this.label_mostVisited_result9_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox_mostVisited_result9_favicon
@@ -1200,7 +1227,7 @@
             this.label_mostVisited_result10_lastVisit.Name = "label_mostVisited_result10_lastVisit";
             this.label_mostVisited_result10_lastVisit.Size = new System.Drawing.Size(219, 15);
             this.label_mostVisited_result10_lastVisit.TabIndex = 0;
-            this.label_mostVisited_result10_lastVisit.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.label_mostVisited_result10_lastVisit.Text = " ";
             this.label_mostVisited_result10_lastVisit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_mostVisited_result10_count
@@ -1210,20 +1237,23 @@
             this.label_mostVisited_result10_count.Name = "label_mostVisited_result10_count";
             this.label_mostVisited_result10_count.Size = new System.Drawing.Size(130, 15);
             this.label_mostVisited_result10_count.TabIndex = 0;
-            this.label_mostVisited_result10_count.Text = "Visits count: 19";
+            this.label_mostVisited_result10_count.Text = " ";
             this.label_mostVisited_result10_count.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // linkLabel_mostVisited_result10_url
             // 
             this.linkLabel_mostVisited_result10_url.AutoEllipsis = true;
             this.linkLabel_mostVisited_result10_url.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel_mostVisited_result10_url.LinkColor = System.Drawing.Color.DodgerBlue;
             this.linkLabel_mostVisited_result10_url.Location = new System.Drawing.Point(96, 38);
             this.linkLabel_mostVisited_result10_url.Name = "linkLabel_mostVisited_result10_url";
             this.linkLabel_mostVisited_result10_url.Size = new System.Drawing.Size(239, 17);
             this.linkLabel_mostVisited_result10_url.TabIndex = 2;
             this.linkLabel_mostVisited_result10_url.TabStop = true;
-            this.linkLabel_mostVisited_result10_url.Text = "https://google.com/searchquery=abcdefgh";
+            this.linkLabel_mostVisited_result10_url.Text = " ";
             this.linkLabel_mostVisited_result10_url.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkLabel_mostVisited_result10_url.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.linkLabel_mostVisited_result10_url.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_mostVisited_result10_url_LinkClicked);
             // 
             // label_mostVisited_result10_title
             // 
@@ -1233,7 +1263,7 @@
             this.label_mostVisited_result10_title.Name = "label_mostVisited_result10_title";
             this.label_mostVisited_result10_title.Size = new System.Drawing.Size(204, 23);
             this.label_mostVisited_result10_title.TabIndex = 0;
-            this.label_mostVisited_result10_title.Text = "www.google.com";
+            this.label_mostVisited_result10_title.Text = " ";
             this.label_mostVisited_result10_title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox_mostVisited_result10_favicon
@@ -1249,7 +1279,7 @@
             // 
             // panel20
             // 
-            this.panel20.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel20.BackColor = System.Drawing.Color.White;
             this.panel20.Controls.Add(this.label10);
             this.panel20.Controls.Add(this.pictureBox2);
             this.panel20.Controls.Add(this.label5);
@@ -1261,13 +1291,14 @@
             // 
             // label10
             // 
-            this.label10.Font = new System.Drawing.Font("Segoe UI Variable Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(144, 82);
+            this.label10.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.label10.Location = new System.Drawing.Point(148, 75);
             this.label10.Name = "label10";
             this.label10.Padding = new System.Windows.Forms.Padding(3);
-            this.label10.Size = new System.Drawing.Size(321, 29);
+            this.label10.Size = new System.Drawing.Size(389, 29);
             this.label10.TabIndex = 3;
-            this.label10.Text = "The top 10 most visited web sites are as follows";
+            this.label10.Text = "Your top 10 most visited websites";
             // 
             // pictureBox2
             // 
@@ -1285,13 +1316,13 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(141, 22);
+            this.label5.Location = new System.Drawing.Point(141, 25);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(3);
-            this.label5.Size = new System.Drawing.Size(459, 53);
+            this.label5.Size = new System.Drawing.Size(379, 53);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Your Most Visited Websites";
+            this.label5.Text = "Most Visited Websites";
             // 
             // tabPage_socialMedia
             // 
@@ -1346,7 +1377,7 @@
             this.social_last1.Name = "social_last1";
             this.social_last1.Size = new System.Drawing.Size(227, 15);
             this.social_last1.TabIndex = 0;
-            this.social_last1.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.social_last1.Text = " ";
             this.social_last1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_count1
@@ -1356,20 +1387,23 @@
             this.social_count1.Name = "social_count1";
             this.social_count1.Size = new System.Drawing.Size(138, 15);
             this.social_count1.TabIndex = 0;
-            this.social_count1.Text = "Visits count: 19";
+            this.social_count1.Text = " ";
             this.social_count1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_url1
             // 
             this.social_url1.AutoEllipsis = true;
             this.social_url1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.social_url1.LinkColor = System.Drawing.Color.DodgerBlue;
             this.social_url1.Location = new System.Drawing.Point(95, 38);
             this.social_url1.Name = "social_url1";
             this.social_url1.Size = new System.Drawing.Size(247, 17);
             this.social_url1.TabIndex = 2;
             this.social_url1.TabStop = true;
-            this.social_url1.Text = "https://google.com/searchquery=abcdefgh";
+            this.social_url1.Text = " ";
             this.social_url1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.social_url1.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.social_url1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.social_url1_LinkClicked);
             // 
             // social_title1
             // 
@@ -1379,7 +1413,7 @@
             this.social_title1.Name = "social_title1";
             this.social_title1.Size = new System.Drawing.Size(212, 23);
             this.social_title1.TabIndex = 0;
-            this.social_title1.Text = "www.google.com";
+            this.social_title1.Text = " ";
             this.social_title1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_icon1
@@ -1414,7 +1448,7 @@
             this.social_last2.Name = "social_last2";
             this.social_last2.Size = new System.Drawing.Size(227, 15);
             this.social_last2.TabIndex = 0;
-            this.social_last2.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.social_last2.Text = " ";
             this.social_last2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_count2
@@ -1424,20 +1458,23 @@
             this.social_count2.Name = "social_count2";
             this.social_count2.Size = new System.Drawing.Size(138, 15);
             this.social_count2.TabIndex = 0;
-            this.social_count2.Text = "Visits count: 19";
+            this.social_count2.Text = " ";
             this.social_count2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_url2
             // 
             this.social_url2.AutoEllipsis = true;
             this.social_url2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.social_url2.LinkColor = System.Drawing.Color.DodgerBlue;
             this.social_url2.Location = new System.Drawing.Point(95, 38);
             this.social_url2.Name = "social_url2";
             this.social_url2.Size = new System.Drawing.Size(247, 17);
             this.social_url2.TabIndex = 2;
             this.social_url2.TabStop = true;
-            this.social_url2.Text = "https://google.com/searchquery=abcdefgh";
+            this.social_url2.Text = " ";
             this.social_url2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.social_url2.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.social_url2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.social_url2_LinkClicked);
             // 
             // social_title2
             // 
@@ -1447,7 +1484,7 @@
             this.social_title2.Name = "social_title2";
             this.social_title2.Size = new System.Drawing.Size(212, 23);
             this.social_title2.TabIndex = 0;
-            this.social_title2.Text = "www.google.com";
+            this.social_title2.Text = " ";
             this.social_title2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_icon2
@@ -1482,7 +1519,7 @@
             this.social_last3.Name = "social_last3";
             this.social_last3.Size = new System.Drawing.Size(227, 15);
             this.social_last3.TabIndex = 0;
-            this.social_last3.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.social_last3.Text = " ";
             this.social_last3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_count3
@@ -1492,20 +1529,23 @@
             this.social_count3.Name = "social_count3";
             this.social_count3.Size = new System.Drawing.Size(138, 15);
             this.social_count3.TabIndex = 0;
-            this.social_count3.Text = "Visits count: 19";
+            this.social_count3.Text = " ";
             this.social_count3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_url3
             // 
             this.social_url3.AutoEllipsis = true;
             this.social_url3.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.social_url3.LinkColor = System.Drawing.Color.DodgerBlue;
             this.social_url3.Location = new System.Drawing.Point(95, 38);
             this.social_url3.Name = "social_url3";
             this.social_url3.Size = new System.Drawing.Size(247, 17);
             this.social_url3.TabIndex = 2;
             this.social_url3.TabStop = true;
-            this.social_url3.Text = "https://google.com/searchquery=abcdefgh";
+            this.social_url3.Text = " ";
             this.social_url3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.social_url3.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.social_url3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.social_url3_LinkClicked);
             // 
             // social_title3
             // 
@@ -1515,7 +1555,7 @@
             this.social_title3.Name = "social_title3";
             this.social_title3.Size = new System.Drawing.Size(212, 23);
             this.social_title3.TabIndex = 0;
-            this.social_title3.Text = "www.google.com";
+            this.social_title3.Text = " ";
             this.social_title3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_icon3
@@ -1550,7 +1590,7 @@
             this.social_last4.Name = "social_last4";
             this.social_last4.Size = new System.Drawing.Size(227, 15);
             this.social_last4.TabIndex = 0;
-            this.social_last4.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.social_last4.Text = " ";
             this.social_last4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_count4
@@ -1560,20 +1600,23 @@
             this.social_count4.Name = "social_count4";
             this.social_count4.Size = new System.Drawing.Size(138, 15);
             this.social_count4.TabIndex = 0;
-            this.social_count4.Text = "Visits count: 19";
+            this.social_count4.Text = " ";
             this.social_count4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_url4
             // 
             this.social_url4.AutoEllipsis = true;
             this.social_url4.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.social_url4.LinkColor = System.Drawing.Color.DodgerBlue;
             this.social_url4.Location = new System.Drawing.Point(95, 38);
             this.social_url4.Name = "social_url4";
             this.social_url4.Size = new System.Drawing.Size(247, 17);
             this.social_url4.TabIndex = 2;
             this.social_url4.TabStop = true;
-            this.social_url4.Text = "https://google.com/searchquery=abcdefgh";
+            this.social_url4.Text = " ";
             this.social_url4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.social_url4.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.social_url4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.social_url4_LinkClicked);
             // 
             // social_title4
             // 
@@ -1583,7 +1626,7 @@
             this.social_title4.Name = "social_title4";
             this.social_title4.Size = new System.Drawing.Size(212, 23);
             this.social_title4.TabIndex = 0;
-            this.social_title4.Text = "www.google.com";
+            this.social_title4.Text = " ";
             this.social_title4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_icon4
@@ -1618,7 +1661,7 @@
             this.social_last5.Name = "social_last5";
             this.social_last5.Size = new System.Drawing.Size(227, 15);
             this.social_last5.TabIndex = 0;
-            this.social_last5.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.social_last5.Text = " ";
             this.social_last5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_count5
@@ -1628,20 +1671,23 @@
             this.social_count5.Name = "social_count5";
             this.social_count5.Size = new System.Drawing.Size(138, 15);
             this.social_count5.TabIndex = 0;
-            this.social_count5.Text = "Visits count: 19";
+            this.social_count5.Text = " ";
             this.social_count5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_url5
             // 
             this.social_url5.AutoEllipsis = true;
             this.social_url5.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.social_url5.LinkColor = System.Drawing.Color.DodgerBlue;
             this.social_url5.Location = new System.Drawing.Point(95, 38);
             this.social_url5.Name = "social_url5";
             this.social_url5.Size = new System.Drawing.Size(247, 17);
             this.social_url5.TabIndex = 2;
             this.social_url5.TabStop = true;
-            this.social_url5.Text = "https://google.com/searchquery=abcdefgh";
+            this.social_url5.Text = " ";
             this.social_url5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.social_url5.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.social_url5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.social_url5_LinkClicked);
             // 
             // social_title5
             // 
@@ -1651,7 +1697,7 @@
             this.social_title5.Name = "social_title5";
             this.social_title5.Size = new System.Drawing.Size(212, 23);
             this.social_title5.TabIndex = 0;
-            this.social_title5.Text = "www.google.com";
+            this.social_title5.Text = " ";
             this.social_title5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_icon5
@@ -1686,7 +1732,7 @@
             this.social_last6.Name = "social_last6";
             this.social_last6.Size = new System.Drawing.Size(227, 15);
             this.social_last6.TabIndex = 0;
-            this.social_last6.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.social_last6.Text = " ";
             this.social_last6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_count6
@@ -1696,20 +1742,23 @@
             this.social_count6.Name = "social_count6";
             this.social_count6.Size = new System.Drawing.Size(138, 15);
             this.social_count6.TabIndex = 0;
-            this.social_count6.Text = "Visits count: 19";
+            this.social_count6.Text = " ";
             this.social_count6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_url6
             // 
             this.social_url6.AutoEllipsis = true;
             this.social_url6.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.social_url6.LinkColor = System.Drawing.Color.DodgerBlue;
             this.social_url6.Location = new System.Drawing.Point(95, 38);
             this.social_url6.Name = "social_url6";
             this.social_url6.Size = new System.Drawing.Size(247, 17);
             this.social_url6.TabIndex = 2;
             this.social_url6.TabStop = true;
-            this.social_url6.Text = "https://google.com/searchquery=abcdefgh";
+            this.social_url6.Text = " ";
             this.social_url6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.social_url6.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.social_url6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.social_url6_LinkClicked);
             // 
             // social_title6
             // 
@@ -1719,7 +1768,7 @@
             this.social_title6.Name = "social_title6";
             this.social_title6.Size = new System.Drawing.Size(212, 23);
             this.social_title6.TabIndex = 0;
-            this.social_title6.Text = "www.google.com";
+            this.social_title6.Text = " ";
             this.social_title6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_icon6
@@ -1754,7 +1803,7 @@
             this.social_last7.Name = "social_last7";
             this.social_last7.Size = new System.Drawing.Size(227, 15);
             this.social_last7.TabIndex = 0;
-            this.social_last7.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.social_last7.Text = " ";
             this.social_last7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_count7
@@ -1764,20 +1813,23 @@
             this.social_count7.Name = "social_count7";
             this.social_count7.Size = new System.Drawing.Size(138, 15);
             this.social_count7.TabIndex = 0;
-            this.social_count7.Text = "Visits count: 19";
+            this.social_count7.Text = " ";
             this.social_count7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_url7
             // 
             this.social_url7.AutoEllipsis = true;
             this.social_url7.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.social_url7.LinkColor = System.Drawing.Color.DodgerBlue;
             this.social_url7.Location = new System.Drawing.Point(95, 38);
             this.social_url7.Name = "social_url7";
             this.social_url7.Size = new System.Drawing.Size(247, 17);
             this.social_url7.TabIndex = 2;
             this.social_url7.TabStop = true;
-            this.social_url7.Text = "https://google.com/searchquery=abcdefgh";
+            this.social_url7.Text = " ";
             this.social_url7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.social_url7.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.social_url7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.social_url7_LinkClicked);
             // 
             // social_title7
             // 
@@ -1787,7 +1839,7 @@
             this.social_title7.Name = "social_title7";
             this.social_title7.Size = new System.Drawing.Size(212, 23);
             this.social_title7.TabIndex = 0;
-            this.social_title7.Text = "www.google.com";
+            this.social_title7.Text = " ";
             this.social_title7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_icon7
@@ -1822,7 +1874,7 @@
             this.social_last8.Name = "social_last8";
             this.social_last8.Size = new System.Drawing.Size(227, 15);
             this.social_last8.TabIndex = 0;
-            this.social_last8.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.social_last8.Text = " ";
             this.social_last8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_count8
@@ -1832,20 +1884,23 @@
             this.social_count8.Name = "social_count8";
             this.social_count8.Size = new System.Drawing.Size(138, 15);
             this.social_count8.TabIndex = 0;
-            this.social_count8.Text = "Visits count: 19";
+            this.social_count8.Text = " ";
             this.social_count8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_url8
             // 
             this.social_url8.AutoEllipsis = true;
             this.social_url8.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.social_url8.LinkColor = System.Drawing.Color.DodgerBlue;
             this.social_url8.Location = new System.Drawing.Point(95, 38);
             this.social_url8.Name = "social_url8";
             this.social_url8.Size = new System.Drawing.Size(247, 17);
             this.social_url8.TabIndex = 2;
             this.social_url8.TabStop = true;
-            this.social_url8.Text = "https://google.com/searchquery=abcdefgh";
+            this.social_url8.Text = " ";
             this.social_url8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.social_url8.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.social_url8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.social_url8_LinkClicked);
             // 
             // social_title8
             // 
@@ -1855,7 +1910,7 @@
             this.social_title8.Name = "social_title8";
             this.social_title8.Size = new System.Drawing.Size(212, 23);
             this.social_title8.TabIndex = 0;
-            this.social_title8.Text = "www.google.com";
+            this.social_title8.Text = " ";
             this.social_title8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_icon8
@@ -1890,7 +1945,7 @@
             this.social_last9.Name = "social_last9";
             this.social_last9.Size = new System.Drawing.Size(227, 15);
             this.social_last9.TabIndex = 0;
-            this.social_last9.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.social_last9.Text = " ";
             this.social_last9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_count9
@@ -1900,20 +1955,23 @@
             this.social_count9.Name = "social_count9";
             this.social_count9.Size = new System.Drawing.Size(138, 15);
             this.social_count9.TabIndex = 0;
-            this.social_count9.Text = "Visits count: 19";
+            this.social_count9.Text = " ";
             this.social_count9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_url9
             // 
             this.social_url9.AutoEllipsis = true;
             this.social_url9.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.social_url9.LinkColor = System.Drawing.Color.DodgerBlue;
             this.social_url9.Location = new System.Drawing.Point(95, 38);
             this.social_url9.Name = "social_url9";
             this.social_url9.Size = new System.Drawing.Size(247, 17);
             this.social_url9.TabIndex = 2;
             this.social_url9.TabStop = true;
-            this.social_url9.Text = "https://google.com/searchquery=abcdefgh";
+            this.social_url9.Text = " ";
             this.social_url9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.social_url9.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.social_url9.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.social_url9_LinkClicked);
             // 
             // social_title9
             // 
@@ -1923,7 +1981,7 @@
             this.social_title9.Name = "social_title9";
             this.social_title9.Size = new System.Drawing.Size(212, 23);
             this.social_title9.TabIndex = 0;
-            this.social_title9.Text = "www.google.com";
+            this.social_title9.Text = " ";
             this.social_title9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_icon9
@@ -1958,7 +2016,7 @@
             this.social_last10.Name = "social_last10";
             this.social_last10.Size = new System.Drawing.Size(227, 15);
             this.social_last10.TabIndex = 0;
-            this.social_last10.Text = "Last visit: 25/08/2022 9.00 AM";
+            this.social_last10.Text = " ";
             this.social_last10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_count10
@@ -1968,20 +2026,23 @@
             this.social_count10.Name = "social_count10";
             this.social_count10.Size = new System.Drawing.Size(138, 15);
             this.social_count10.TabIndex = 0;
-            this.social_count10.Text = "Visits count: 19";
+            this.social_count10.Text = " ";
             this.social_count10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_url10
             // 
             this.social_url10.AutoEllipsis = true;
             this.social_url10.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.social_url10.LinkColor = System.Drawing.Color.DodgerBlue;
             this.social_url10.Location = new System.Drawing.Point(96, 38);
             this.social_url10.Name = "social_url10";
             this.social_url10.Size = new System.Drawing.Size(247, 17);
             this.social_url10.TabIndex = 2;
             this.social_url10.TabStop = true;
-            this.social_url10.Text = "https://google.com/searchquery=abcdefgh";
+            this.social_url10.Text = " ";
             this.social_url10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.social_url10.VisitedLinkColor = System.Drawing.Color.MediumPurple;
+            this.social_url10.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.social_url10_LinkClicked);
             // 
             // social_title10
             // 
@@ -1991,7 +2052,7 @@
             this.social_title10.Name = "social_title10";
             this.social_title10.Size = new System.Drawing.Size(212, 23);
             this.social_title10.TabIndex = 0;
-            this.social_title10.Text = "www.google.com";
+            this.social_title10.Text = " ";
             this.social_title10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // social_icon10
@@ -2007,7 +2068,7 @@
             // 
             // panel21
             // 
-            this.panel21.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel21.BackColor = System.Drawing.Color.White;
             this.panel21.Controls.Add(this.label11);
             this.panel21.Controls.Add(this.pictureBox3);
             this.panel21.Controls.Add(this.label6);
@@ -2019,12 +2080,14 @@
             // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(144, 82);
+            this.label11.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.label11.Location = new System.Drawing.Point(148, 75);
             this.label11.Name = "label11";
             this.label11.Padding = new System.Windows.Forms.Padding(3);
-            this.label11.Size = new System.Drawing.Size(412, 30);
+            this.label11.Size = new System.Drawing.Size(447, 30);
             this.label11.TabIndex = 4;
-            this.label11.Text = "Your activity on most popular social media around the world";
+            this.label11.Text = "Your activity on most popular social media";
             // 
             // pictureBox3
             // 
@@ -2042,13 +2105,13 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(141, 22);
+            this.label6.Location = new System.Drawing.Point(141, 25);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(3);
-            this.label6.Size = new System.Drawing.Size(308, 53);
+            this.label6.Size = new System.Drawing.Size(228, 53);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Your Social Media";
+            this.label6.Text = "Social Media";
             // 
             // tabPage_timeSpent
             // 
@@ -2078,7 +2141,9 @@
             this.pieChart1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pieChart1.Font = new System.Drawing.Font("Segoe UI Variable Display", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pieChart1.Location = new System.Drawing.Point(0, 0);
+            this.pieChart1.Margin = new System.Windows.Forms.Padding(20);
             this.pieChart1.Name = "pieChart1";
+            this.pieChart1.Padding = new System.Windows.Forms.Padding(20);
             this.pieChart1.Size = new System.Drawing.Size(1100, 541);
             this.pieChart1.TabIndex = 0;
             this.pieChart1.TabStop = false;
@@ -2086,7 +2151,7 @@
             // 
             // panel22
             // 
-            this.panel22.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel22.BackColor = System.Drawing.Color.White;
             this.panel22.Controls.Add(this.label12);
             this.panel22.Controls.Add(this.pictureBox4);
             this.panel22.Controls.Add(this.label7);
@@ -2098,12 +2163,14 @@
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(144, 82);
+            this.label12.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F);
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.label12.Location = new System.Drawing.Point(148, 75);
             this.label12.Name = "label12";
             this.label12.Padding = new System.Windows.Forms.Padding(3);
             this.label12.Size = new System.Drawing.Size(409, 28);
             this.label12.TabIndex = 5;
-            this.label12.Text = "How much time you spent on browsing the Internet";
+            this.label12.Text = "Tme you spent on browsing the Internet";
             // 
             // pictureBox4
             // 
@@ -2121,7 +2188,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label7.Location = new System.Drawing.Point(141, 22);
+            this.label7.Location = new System.Drawing.Point(141, 25);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.label7.Name = "label7";
             this.label7.Padding = new System.Windows.Forms.Padding(3);
@@ -2159,9 +2226,9 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Variable Display", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(209, 175);
+            this.label4.Location = new System.Drawing.Point(354, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(682, 178);
+            this.label4.Size = new System.Drawing.Size(393, 404);
             this.label4.TabIndex = 2;
             this.label4.Text = resources.GetString("label4.Text");
             // 
@@ -2178,7 +2245,7 @@
             // 
             // panel23
             // 
-            this.panel23.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel23.BackColor = System.Drawing.Color.White;
             this.panel23.Controls.Add(this.label13);
             this.panel23.Controls.Add(this.pictureBox5);
             this.panel23.Controls.Add(this.label8);
@@ -2190,12 +2257,14 @@
             // 
             // label13
             // 
-            this.label13.Location = new System.Drawing.Point(144, 82);
+            this.label13.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F);
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.label13.Location = new System.Drawing.Point(148, 75);
             this.label13.Name = "label13";
             this.label13.Padding = new System.Windows.Forms.Padding(3);
             this.label13.Size = new System.Drawing.Size(381, 27);
             this.label13.TabIndex = 6;
-            this.label13.Text = "People behind this project";
+            this.label13.Text = "Brains and resources behind this project";
             // 
             // pictureBox5
             // 
@@ -2213,7 +2282,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label8.Location = new System.Drawing.Point(141, 22);
+            this.label8.Location = new System.Drawing.Point(141, 25);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.label8.Name = "label8";
             this.label8.Padding = new System.Windows.Forms.Padding(3);
@@ -2229,6 +2298,7 @@
             this.ClientSize = new System.Drawing.Size(1114, 725);
             this.Controls.Add(this.tabControl_navigation);
             this.Font = new System.Drawing.Font("Segoe UI Variable Display", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
