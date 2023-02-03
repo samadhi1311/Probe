@@ -46,12 +46,6 @@ namespace Probe
             label4.Parent = pictureBox6;
             label4.BackColor = Color.Transparent;
 
-            //Disabling the tabs at the begining of the program
-            tabPage_mostVisited.Enabled = false;
-            tabPage_socialMedia.Enabled = false;
-            tabPage_timeSpent.Enabled = false;
-            tabPage_about.Enabled = false;
-
             //Checking System registry to detect default browser set by user
             using (RegistryKey userChoiceKey = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice"))
             {
@@ -107,140 +101,129 @@ namespace Probe
             this.Show();
         }
 
-        //Method to enable tab pages that were disabled at the begining of the program
-        public void enableControls()
-        {
-            tabPage_mostVisited.Enabled = true;
-            tabPage_socialMedia.Enabled = true;
-            tabPage_timeSpent.Enabled = true;
-            tabPage_about.Enabled = true;
-        }
-
         //Add data in the variables to the relavent controls like lables, pictureboxes and piechart
         private void mostVisited()
         {
             loader();
 
-            enableControls();
-
             label_mostVisited_result1_title.Text = mostVisited_titles[0];
             linkLabel_mostVisited_result1_url.Text = mostVisited_urls[0];
-            label_mostVisited_result1_count.Text = mostVisited_visits[0].ToString();
-            label_mostVisited_result1_lastVisit.Text = mostVisited_lastVisits[0].ToString();
+            label_mostVisited_result1_count.Text = "Total visits: " + mostVisited_visits[0].ToString();
+            label_mostVisited_result1_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[0].ToString();
             pictureBox_mostVisited_result1_favicon.ImageLocation = "https://www.google.com/s2/favicons?domain=" + mostVisited_titles[0] + "&sz=128";
 
             label_mostVisited_result2_title.Text = mostVisited_titles[1];
             linkLabel_mostVisited_result2_url.Text = mostVisited_urls[1];
-            label_mostVisited_result2_count.Text = mostVisited_visits[1].ToString();
-            label_mostVisited_result3_lastVisit.Text = mostVisited_lastVisits[1].ToString();
+            label_mostVisited_result2_count.Text = "Total visits: " + mostVisited_visits[1].ToString();
+            label_mostVisited_result3_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[1].ToString();
             pictureBox_mostVisited_result1_favicon.ImageLocation = "https://www.google.com/s2/favicons?domain=" + mostVisited_titles[1] + "&sz=128";
 
             label_mostVisited_result3_title.Text = mostVisited_titles[2];
             linkLabel_mostVisited_result3_url.Text = mostVisited_urls[2];
-            label_mostVisited_result3_count.Text = mostVisited_visits[2].ToString();
-            label_mostVisited_result3_lastVisit.Text = mostVisited_lastVisits[2].ToString();
+            label_mostVisited_result3_count.Text = "Total visits: " + mostVisited_visits[2].ToString();
+            label_mostVisited_result3_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[2].ToString();
             pictureBox_mostVisited_result3_favicon.ImageLocation = "https://www.google.com/s2/favicons?domain=" + mostVisited_titles[2] + "&sz=128";
 
             label_mostVisited_result4_title.Text = mostVisited_titles[3];
             linkLabel_mostVisited_result4_url.Text = mostVisited_urls[3];
-            label_mostVisited_result4_count.Text = mostVisited_visits[3].ToString();
-            label_mostVisited_result4_lastVisit.Text = mostVisited_lastVisits[3].ToString();
+            label_mostVisited_result4_count.Text = "Total visits: " + mostVisited_visits[3].ToString();
+            label_mostVisited_result4_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[3].ToString();
             pictureBox_mostVisited_result4_favicon.ImageLocation = "https://www.google.com/s2/favicons?domain=" + mostVisited_titles[2] + "&sz=128";
 
             label_mostVisited_result5_title.Text = mostVisited_titles[4];
             linkLabel_mostVisited_result5_url.Text = mostVisited_urls[4];
-            label_mostVisited_result5_count.Text = mostVisited_visits[4].ToString();
-            label_mostVisited_result5_lastVisit.Text = mostVisited_lastVisits[4].ToString();
+            label_mostVisited_result5_count.Text = "Total visits: " + mostVisited_visits[4].ToString();
+            label_mostVisited_result5_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[4].ToString();
             pictureBox_mostVisited_result5_favicon.ImageLocation = "https://www.google.com/s2/favicons?domain=" + mostVisited_titles[4] + "&sz=128";
 
             label_mostVisited_result6_title.Text = mostVisited_titles[5];
             linkLabel_mostVisited_result6_url.Text = mostVisited_urls[5];
-            label_mostVisited_result6_count.Text = mostVisited_visits[5].ToString();
-            label_mostVisited_result6_lastVisit.Text = mostVisited_lastVisits[2].ToString();
+            label_mostVisited_result6_count.Text = "Total visits: " + mostVisited_visits[5].ToString();
+            label_mostVisited_result6_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[5].ToString();
             pictureBox_mostVisited_result6_favicon.ImageLocation = "https://www.google.com/s2/favicons?domain=" + mostVisited_titles[5] + "&sz=128";
 
             label_mostVisited_result7_title.Text = mostVisited_titles[6];
             linkLabel_mostVisited_result7_url.Text = mostVisited_urls[6];
-            label_mostVisited_result7_count.Text = mostVisited_visits[6].ToString();
-            label_mostVisited_result7_lastVisit.Text = mostVisited_lastVisits[6].ToString();
+            label_mostVisited_result7_count.Text = "Total visits: " + mostVisited_visits[6].ToString();
+            label_mostVisited_result7_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[6].ToString();
             pictureBox_mostVisited_result7_favicon.ImageLocation = "https://www.google.com/s2/favicons?domain=" + mostVisited_titles[6] + "&sz=128";
 
             label_mostVisited_result8_title.Text = mostVisited_titles[7];
             linkLabel_mostVisited_result8_url.Text = mostVisited_urls[7];
-            label_mostVisited_result8_count.Text = mostVisited_visits[7].ToString();
-            label_mostVisited_result8_lastVisit.Text = mostVisited_lastVisits[7].ToString();
+            label_mostVisited_result8_count.Text = "Total visits: " + mostVisited_visits[7].ToString();
+            label_mostVisited_result8_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[7].ToString();
             pictureBox_mostVisited_result8_favicon.ImageLocation = "https://www.google.com/s2/favicons?domain=" + mostVisited_titles[7] + "&sz=128";
 
             label_mostVisited_result9_title.Text = mostVisited_titles[8];
             linkLabel_mostVisited_result9_url.Text = mostVisited_urls[8];
-            label_mostVisited_result9_count.Text = mostVisited_visits[8].ToString();
-            label_mostVisited_result9_lastVisit.Text = mostVisited_lastVisits[8].ToString();
+            label_mostVisited_result9_count.Text = "Total visits: " + mostVisited_visits[8].ToString();
+            label_mostVisited_result9_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[8].ToString();
             pictureBox_mostVisited_result9_favicon.ImageLocation = "https://www.google.com/s2/favicons?domain=" + mostVisited_titles[8] + "&sz=128";
 
             label_mostVisited_result10_title.Text = mostVisited_titles[9];
             linkLabel_mostVisited_result10_url.Text = mostVisited_urls[9];
-            label_mostVisited_result10_count.Text = mostVisited_visits[9].ToString();
-            label_mostVisited_result10_lastVisit.Text = mostVisited_lastVisits[9].ToString();
+            label_mostVisited_result10_count.Text = "Total visits: " + mostVisited_visits[9].ToString();
+            label_mostVisited_result10_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[9].ToString();
             pictureBox_mostVisited_result10_favicon.ImageLocation = "https://www.google.com/s2/favicons?domain=" + mostVisited_titles[9] + "&sz=128";
 
             social_title1.Text = social_titles[0];
             social_url1.Text = social_urls[0];
-            social_count1.Text = social_visits[0].ToString();
-            social_last1.Text = social_lastVisits[0];
+            social_count1.Text = "Total visits: " + social_visits[0].ToString();
+            social_last1.Text = "Last visit: " + social_lastVisits[0];
             social_icon1.ImageLocation = "https://www.google.com/s2/favicons?domain=" + social_titles[0] + "&sz=128";
 
             social_title2.Text = social_titles[1];
             social_url2.Text = social_urls[1];
-            social_count2.Text = social_visits[1].ToString();
-            social_last2.Text = social_lastVisits[1];
+            social_count2.Text = "Total visits: " + social_visits[1].ToString();
+            social_last2.Text = "Last visit: " + social_lastVisits[1];
             social_icon2.ImageLocation = "https://www.google.com/s2/favicons?domain=" + social_titles[1] + "&sz=128";
 
             social_title3.Text = social_titles[2];
             social_url3.Text = social_urls[2];
-            social_count3.Text = social_visits[2].ToString();
-            social_last3.Text = social_lastVisits[2];
+            social_count3.Text = "Total visits: " + social_visits[2].ToString();
+            social_last3.Text = "Last visit: " + social_lastVisits[2];
             social_icon3.ImageLocation = "https://www.google.com/s2/favicons?domain=" + social_titles[2] + "&sz=128";
 
             social_title4.Text = social_titles[3];
             social_url4.Text = social_urls[3];
-            social_count4.Text = social_visits[3].ToString();
-            social_last4.Text = social_lastVisits[3];
+            social_count4.Text = "Total visits: " + social_visits[3].ToString();
+            social_last4.Text = "Last visit: " + social_lastVisits[3];
             social_icon4.ImageLocation = "https://www.google.com/s2/favicons?domain=" + social_titles[3] + "&sz=128";
 
             social_title5.Text = social_titles[4];
             social_url5.Text = social_urls[4];
-            social_count5.Text = social_visits[4].ToString();
-            social_last5.Text = social_lastVisits[4];
+            social_count5.Text = "Total visits: " + social_visits[4].ToString();
+            social_last5.Text = "Last visit: " + social_lastVisits[4];
             social_icon5.ImageLocation = "https://www.google.com/s2/favicons?domain=" + social_titles[4] + "&sz=128";
 
             social_title6.Text = social_titles[5];
             social_url6.Text = social_urls[5];
-            social_count6.Text = social_visits[5].ToString();
-            social_last6.Text = social_lastVisits[5];
+            social_count6.Text = "Total visits: " + social_visits[5].ToString();
+            social_last6.Text = "Last visit: " + social_lastVisits[5];
             social_icon6.ImageLocation = "https://www.google.com/s2/favicons?domain=" + social_titles[5] + "&sz=128";
 
             social_title7.Text = social_titles[6];
             social_url7.Text = social_urls[6];
-            social_count7.Text = social_visits[6].ToString();
-            social_last7.Text = social_lastVisits[6];
+            social_count7.Text = "Total visits: " + social_visits[6].ToString();
+            social_last7.Text = "Last visit: " + social_lastVisits[6];
             social_icon7.ImageLocation = "https://www.google.com/s2/favicons?domain=" + social_titles[6] + "&sz=128";
 
             social_title8.Text = social_titles[7];
             social_url8.Text = social_urls[7];
-            social_count8.Text = social_visits[7].ToString();
-            social_last8.Text = social_lastVisits[7];
+            social_count8.Text = "Total visits: " + social_visits[7].ToString();
+            social_last8.Text = "Last visit: " + social_lastVisits[7];
             social_icon8.ImageLocation = "https://www.google.com/s2/favicons?domain=" + social_titles[7] + "&sz=128";
 
             social_title9.Text = social_titles[8];
             social_url9.Text = social_urls[8];
-            social_count9.Text = social_visits[8].ToString();
-            social_last9.Text = social_lastVisits[8];
+            social_count9.Text = "Total visits: " + social_visits[8].ToString();
+            social_last9.Text = "Last visit: " + social_lastVisits[8];
             social_icon9.ImageLocation = "https://www.google.com/s2/favicons?domain=" + social_titles[8] + "&sz=128";
 
             social_title10.Text = social_titles[9];
             social_url10.Text = social_urls[9];
-            social_count10.Text = social_visits[9].ToString();
-            social_last10.Text = social_lastVisits[9];
+            social_count10.Text = "Total visits: " + social_visits[9].ToString();
+            social_last10.Text = "Last visit: " + social_lastVisits[9];
             social_icon10.ImageLocation = "https://www.google.com/s2/favicons?domain=" + social_titles[9] + "&sz=128";
 
             long topCount = 0;
@@ -367,13 +350,6 @@ namespace Probe
             // Set the legend location to appear in the Right side of the chart
             pieChart1.LegendLocation = LegendLocation.Right;
 
-            Console.WriteLine(totalVisits);
-            Console.WriteLine("a");
-            Console.WriteLine(topCount);
-
-            Console.WriteLine("a");
-            Console.WriteLine(Convert.ToDouble(totalVisits) - (Convert.ToDouble(topCount)) / Convert.ToDouble(totalVisits));
-
             tabControl_navigation.SelectedIndex = 1;
 
         }
@@ -433,7 +409,7 @@ namespace Probe
 
                                     long timestamp = reader.GetInt64(2);
                                     DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToString("yyyy-MM-dd HH:mm:ss");
+                                    string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
 
                                     for (int j = 0; j < 10; j++)
                                     {
@@ -478,7 +454,7 @@ namespace Probe
 
                                     long timestamp = reader.GetInt64(2);
                                     DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToString("yyyy-MM-dd HH:mm:ss");
+                                    string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
 
                                     foreach (string socialMediaDomain in socialMedia)
                                     {
@@ -536,7 +512,6 @@ namespace Probe
                                 }
 
                                 TimeSpan totalTime = new TimeSpan(totalTicks);
-                                Console.WriteLine("Total time spent: " + totalTime.ToString(@"dd\:hh\:mm\:ss"));
                             }
 
 
@@ -552,7 +527,7 @@ namespace Probe
                                 }
                             }
                         }
-                        Console.WriteLine(totalVisits);
+
                         long countTemp;
                         string titleTemp;
                         string urlTemp;
@@ -633,7 +608,7 @@ namespace Probe
 
                                     long timestamp = reader.GetInt64(2);
                                     DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToString("yyyy-MM-dd HH:mm:ss");
+                                    string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
 
                                     for (int j = 0; j < 10; j++)
                                     {
@@ -678,7 +653,7 @@ namespace Probe
 
                                     long timestamp = reader.GetInt64(2);
                                     DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToString("yyyy-MM-dd HH:mm:ss");
+                                    string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
 
                                     foreach (string socialMediaDomain in socialMedia)
                                     {
@@ -735,7 +710,6 @@ namespace Probe
                                 }
 
                                 TimeSpan totalTime = new TimeSpan(totalTicks);
-                                Console.WriteLine("Total time spent: " + totalTime.ToString(@"dd\:hh\:mm\:ss"));
                             }
 
 
@@ -751,7 +725,6 @@ namespace Probe
                                 }
                             }
                         }
-                        Console.WriteLine(totalVisits);
                         long countTemp;
                         string titleTemp;
                         string urlTemp;
@@ -842,7 +815,7 @@ namespace Probe
 
                             DateTime lastVisit = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(Convert.ToInt64(reader["last_visit_date"]) / 1000000);
                             //DateTime lastVisit = new DateTime(Convert.ToInt64(reader["last_visit_date"]) * TimeSpan.TicksPerSecond);
-                            string lastVisitString = lastVisit.ToString("yyyy-MM-dd HH:mm:ss");
+                            string lastVisitString = lastVisit.ToString("dd/MM/yyyy HH:mm tt");
 
 
                             for (int j = 0; j < 10; j++)
@@ -908,7 +881,7 @@ namespace Probe
 
                                     long timestamp = reader.GetInt64(2);
                                     DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToString("yyyy-MM-dd HH:mm:ss");
+                                    string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
 
                                     for (int j = 0; j < 10; j++)
                                     {
@@ -953,7 +926,7 @@ namespace Probe
 
                                     long timestamp = reader.GetInt64(2);
                                     DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToString("yyyy-MM-dd HH:mm:ss");
+                                    string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
 
                                     foreach (string socialMediaDomain in socialMedia)
                                     {
@@ -1010,7 +983,6 @@ namespace Probe
                                 }
 
                                 TimeSpan totalTime = new TimeSpan(totalTicks);
-                                Console.WriteLine("Total time spent: " + totalTime.ToString(@"dd\:hh\:mm\:ss"));
                             }
 
 
@@ -1026,7 +998,6 @@ namespace Probe
                                 }
                             }
                         }
-                        Console.WriteLine(totalVisits);
                         long countTemp;
                         string titleTemp;
                         string urlTemp;
@@ -1080,6 +1051,129 @@ namespace Probe
         {
             Application.Exit();
         }
+
+        //Navigatable link creation
+        #region link
+        private void linkLabel_mostVisited_result1_url_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel_mostVisited_result1_url.LinkVisited = true;
+            System.Diagnostics.Process.Start(mostVisited_urls[0]);
+        }
+
+        private void linkLabel_mostVisited_result2_url_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel_mostVisited_result2_url.LinkVisited = true;
+            System.Diagnostics.Process.Start(mostVisited_urls[1]);
+        }
+
+        private void linkLabel_mostVisited_result3_url_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel_mostVisited_result3_url.LinkVisited = true;
+            System.Diagnostics.Process.Start(mostVisited_urls[2]);
+        }
+
+        private void linkLabel_mostVisited_result4_url_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel_mostVisited_result4_url.LinkVisited = true;
+            System.Diagnostics.Process.Start(mostVisited_urls[3]);
+        }
+
+        private void linkLabel_mostVisited_result5_url_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel_mostVisited_result5_url.LinkVisited = true;
+            System.Diagnostics.Process.Start(mostVisited_urls[4]);
+        }
+
+        private void linkLabel_mostVisited_result6_url_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel_mostVisited_result6_url.LinkVisited = true;
+            System.Diagnostics.Process.Start(mostVisited_urls[5]);
+        }
+
+        private void linkLabel_mostVisited_result7_url_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel_mostVisited_result7_url.LinkVisited = true;
+            System.Diagnostics.Process.Start(mostVisited_urls[6]);
+        }
+
+        private void linkLabel_mostVisited_result8_url_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel_mostVisited_result8_url.LinkVisited = true;
+            System.Diagnostics.Process.Start(mostVisited_urls[7]);
+        }
+
+        private void linkLabel_mostVisited_result9_url_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel_mostVisited_result9_url.LinkVisited = true;
+            System.Diagnostics.Process.Start(mostVisited_urls[8]);
+        }
+
+        private void linkLabel_mostVisited_result10_url_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel_mostVisited_result10_url.LinkVisited = true;
+            System.Diagnostics.Process.Start(mostVisited_urls[9]);
+        }
+
+        private void social_url1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.social_url1.LinkVisited = true;
+            System.Diagnostics.Process.Start(social_urls[0]);
+        }
+
+        private void social_url2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.social_url2.LinkVisited = true;
+            System.Diagnostics.Process.Start(social_urls[1]);
+        }
+
+        private void social_url3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.social_url3.LinkVisited = true;
+            System.Diagnostics.Process.Start(social_urls[2]);
+        }
+
+        private void social_url4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.social_url4.LinkVisited = true;
+            System.Diagnostics.Process.Start(social_urls[3]);
+        }
+
+        private void social_url5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.social_url5.LinkVisited = true;
+            System.Diagnostics.Process.Start(social_urls[4]);
+        }
+
+        private void social_url6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.social_url6.LinkVisited = true;
+            System.Diagnostics.Process.Start(social_urls[5]);
+        }
+
+        private void social_url7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.social_url7.LinkVisited = true;
+            System.Diagnostics.Process.Start(social_urls[6]);
+        }
+
+        private void social_url8_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.social_url8.LinkVisited = true;
+            System.Diagnostics.Process.Start(social_urls[7]);
+        }
+
+        private void social_url9_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.social_url9.LinkVisited = true;
+            System.Diagnostics.Process.Start(social_urls[8]);
+        }
+
+        private void social_url10_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.social_url10.LinkVisited = true;
+            System.Diagnostics.Process.Start(social_urls[9]);
+        }
+        #endregion
 
     }
 }
