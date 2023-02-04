@@ -233,16 +233,17 @@ namespace Probe
                 topCount += mostVisited_visits[i];
             }
 
+
+            //Creating pieChart
             Func<ChartPoint, string> labelPoint = chartPoint => string.Format("{1:P}", chartPoint.Y, chartPoint.Participation);
 
-            // Define a collection of items to display in the chart 
+            
             SeriesCollection piechartData = new SeriesCollection
             {
 
             };
 
-            // You can add a new item dinamically with the add method of the collection
-            // Useful when you define the data dinamically and not statically
+            
             piechartData.Add(
                 new PieSeries
                 {
@@ -386,12 +387,20 @@ namespace Probe
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Google\Chrome\User Data\Default\History"))
             {
 
-                historyDbPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Google\Chrome\User Data\Default\History";
-                using (var connection = new SQLiteConnection("Data Source=" + historyDbPath))
-                {
+                Process[] processes = Process.GetProcessesByName("chrome");
 
-                    try
+                if (processes.Length > 0)
+                {
+                    Form frm = new closeBrowser();
+                    frm.Show();
+                }
+                else
+                {
+                    historyDbPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Google\Chrome\User Data\Default\History";
+                    using (var connection = new SQLiteConnection("Data Source=" + historyDbPath))
                     {
+
+
                         connection.Open();
                         //Sends the query and retrieves the data
                         using (var command = new SQLiteCommand("SELECT url, visit_count, last_visit_time FROM urls ORDER BY visit_count DESC", connection))
@@ -558,21 +567,13 @@ namespace Probe
                                 }
                             }
                         }
-
-                    }
-                    catch (SQLiteException ex)
-                    {
-                        if (ex.Message.Contains("database is locked"))
-                        {
-                            Form closebrowser = new closeBrowser();
-                            closebrowser.Show();
-                        }
+                        mostVisited();
 
                     }
                 }
 
 
-                mostVisited();
+
             }
             else
             {
