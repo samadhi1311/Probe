@@ -3,6 +3,7 @@ using LiveCharts.Wpf;
 using Microsoft.Win32;
 using System;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -559,14 +560,18 @@ namespace Probe
                         }
 
                     }
-                    catch
+                    catch (SQLiteException ex)
                     {
-                        Form closebrowser = new closeBrowser();
-                        closebrowser.Show();
+                        if (ex.Message.Contains("database is locked"))
+                        {
+                            Form closebrowser = new closeBrowser();
+                            closebrowser.Show();
+                        }
+
                     }
                 }
 
-                
+
                 mostVisited();
             }
             else
@@ -585,92 +590,46 @@ namespace Probe
 
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Microsoft\Edge\User Data\Default\History"))
             {
-                historyDbPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Microsoft\Edge\User Data\Default\History";
-                using (var connection = new SQLiteConnection("Data Source=" + historyDbPath))
+
+
+                Process[] processes = Process.GetProcessesByName("msedge");
+
+                if (processes.Length > 0)
                 {
-
-                    try
+                    Console.WriteLine("Notepad is running.");
+                    Form frm = new closeBrowser();
+                    frm.Show();
+                }
+                else
+                {
+                    historyDbPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Microsoft\Edge\User Data\Default\History";
+                    using (var connection = new SQLiteConnection("Data Source=" + historyDbPath))
                     {
-                        connection.Open();
-
-                        using (var command = new SQLiteCommand("SELECT url, visit_count, last_visit_time FROM urls ORDER BY visit_count DESC", connection))
                         {
-                            using (var reader = command.ExecuteReader())
+                            connection.Open();
+
+                            using (var command = new SQLiteCommand("SELECT url, visit_count, last_visit_time FROM urls ORDER BY visit_count DESC", connection))
                             {
-                                int i = 0;
-
-                                while (reader.Read() && i < 10)
+                                using (var reader = command.ExecuteReader())
                                 {
-                                    Uri uri = new Uri(reader.GetString(0));
-                                    string host = uri.Host;
-                                    int visits = (reader.GetInt32(1));
-                                    bool processed = false;
+                                    int i = 0;
 
-                                    long timestamp = reader.GetInt64(2);
-                                    DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
-
-                                    for (int j = 0; j < 10; j++)
+                                    while (reader.Read() && i < 10)
                                     {
-                                        if (host == mostVisited_titles[j])
-                                        {
-                                            mostVisited_visits[j] += visits;
-                                            processed = true;
-                                            break;
-                                        }
-                                    }
+                                        Uri uri = new Uri(reader.GetString(0));
+                                        string host = uri.Host;
+                                        int visits = (reader.GetInt32(1));
+                                        bool processed = false;
 
-                                    if (!processed)
-                                    {
+                                        long timestamp = reader.GetInt64(2);
+                                        DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
+                                        string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
+
                                         for (int j = 0; j < 10; j++)
                                         {
-                                            if (mostVisited_titles[j] == null)
+                                            if (host == mostVisited_titles[j])
                                             {
-                                                mostVisited_urls[j] = uri.ToString();
-                                                mostVisited_titles[j] = host.ToString();
-                                                mostVisited_visits[j] = visits;
-                                                mostVisited_lastVisits[j] = lastVisitDateString;
-                                                i++;
-                                                break;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        //socials
-                        using (var command = new SQLiteCommand("SELECT url, visit_count, last_visit_time FROM urls ORDER BY visit_count DESC", connection))
-                        {
-                            using (var reader = command.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    Uri uri = new Uri(reader.GetString(0));
-                                    string host = uri.Host;
-                                    int visits = (reader.GetInt32(1));
-                                    bool processed = false;
-
-                                    long timestamp = reader.GetInt64(2);
-                                    DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
-
-                                    foreach (string socialMediaDomain in socialMedia)
-                                    {
-                                        if (host.Contains(socialMediaDomain))
-                                        {
-                                            host = socialMediaDomain;
-                                            break;
-                                        }
-                                    }
-
-                                    if (socialMedia.Contains(host))
-                                    {
-                                        for (int j = 0; j < 10; j++)
-                                        {
-                                            if (host == social_titles[j])
-                                            {
-                                                social_visits[j] += visits;
+                                                mostVisited_visits[j] += visits;
                                                 processed = true;
                                                 break;
                                             }
@@ -680,12 +639,13 @@ namespace Probe
                                         {
                                             for (int j = 0; j < 10; j++)
                                             {
-                                                if (social_titles[j] == null)
+                                                if (mostVisited_titles[j] == null)
                                                 {
-                                                    social_urls[j] = uri.ToString();
-                                                    social_titles[j] = host.ToString();
-                                                    social_visits[j] = visits;
-                                                    social_lastVisits[j] = lastVisitDateString;
+                                                    mostVisited_urls[j] = uri.ToString();
+                                                    mostVisited_titles[j] = host.ToString();
+                                                    mostVisited_visits[j] = visits;
+                                                    mostVisited_lastVisits[j] = lastVisitDateString;
+                                                    i++;
                                                     break;
                                                 }
                                             }
@@ -693,77 +653,130 @@ namespace Probe
                                     }
                                 }
                             }
-                        }
 
-                        using (var command = new SQLiteCommand("SELECT urls.url, urls.title, visits.visit_time " +
-                                                              "FROM urls " +
-                                                              "INNER JOIN visits ON urls.id = visits.url", connection))
-                        {
-                            using (var reader = command.ExecuteReader())
+                            //socials
+                            using (var command = new SQLiteCommand("SELECT url, visit_count, last_visit_time FROM urls ORDER BY visit_count DESC", connection))
                             {
-                                long totalTicks = 0;
-
-                                while (reader.Read())
+                                using (var reader = command.ExecuteReader())
                                 {
-                                    long timeStamp = Convert.ToInt64(reader["visit_time"]) * 10_000;
-                                    totalTicks += timeStamp;
-                                }
+                                    while (reader.Read())
+                                    {
+                                        Uri uri = new Uri(reader.GetString(0));
+                                        string host = uri.Host;
+                                        int visits = (reader.GetInt32(1));
+                                        bool processed = false;
 
-                                TimeSpan totalTime = new TimeSpan(totalTicks);
-                            }
+                                        long timestamp = reader.GetInt64(2);
+                                        DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
+                                        string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
 
+                                        foreach (string socialMediaDomain in socialMedia)
+                                        {
+                                            if (host.Contains(socialMediaDomain))
+                                            {
+                                                host = socialMediaDomain;
+                                                break;
+                                            }
+                                        }
 
-                        }
+                                        if (socialMedia.Contains(host))
+                                        {
+                                            for (int j = 0; j < 10; j++)
+                                            {
+                                                if (host == social_titles[j])
+                                                {
+                                                    social_visits[j] += visits;
+                                                    processed = true;
+                                                    break;
+                                                }
+                                            }
 
-                        using (var command = new SQLiteCommand("SELECT SUM(visit_count) FROM urls", connection))
-                        {
-                            using (var reader = command.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    totalVisits += reader.GetInt32(0);
-                                }
-                            }
-                        }
-                        long countTemp;
-                        string titleTemp;
-                        string urlTemp;
-                        string lastTemp;
-
-                        for (int j = 0; j < mostVisited_visits.Length; j++)
-                        {
-                            for (int k = 0; k < mostVisited_visits.Length; k++)
-                            {
-                                if (mostVisited_visits[j] > mostVisited_visits[k])
-                                {
-                                    countTemp = mostVisited_visits[j];
-                                    mostVisited_visits[j] = mostVisited_visits[k];
-                                    mostVisited_visits[k] = countTemp;
-
-                                    titleTemp = mostVisited_titles[j];
-                                    mostVisited_titles[j] = mostVisited_titles[k];
-                                    mostVisited_titles[k] = titleTemp;
-
-                                    urlTemp = mostVisited_urls[j];
-                                    mostVisited_urls[j] = mostVisited_urls[k];
-                                    mostVisited_urls[k] = urlTemp;
-
-                                    lastTemp = mostVisited_lastVisits[j];
-                                    mostVisited_lastVisits[j] = mostVisited_lastVisits[k];
-                                    mostVisited_lastVisits[k] = lastTemp;
+                                            if (!processed)
+                                            {
+                                                for (int j = 0; j < 10; j++)
+                                                {
+                                                    if (social_titles[j] == null)
+                                                    {
+                                                        social_urls[j] = uri.ToString();
+                                                        social_titles[j] = host.ToString();
+                                                        social_visits[j] = visits;
+                                                        social_lastVisits[j] = lastVisitDateString;
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
-                        }
 
+                            using (var command = new SQLiteCommand("SELECT urls.url, urls.title, visits.visit_time " +
+                                                                  "FROM urls " +
+                                                                  "INNER JOIN visits ON urls.id = visits.url", connection))
+                            {
+                                using (var reader = command.ExecuteReader())
+                                {
+                                    long totalTicks = 0;
+
+                                    while (reader.Read())
+                                    {
+                                        long timeStamp = Convert.ToInt64(reader["visit_time"]) * 10_000;
+                                        totalTicks += timeStamp;
+                                    }
+
+                                    TimeSpan totalTime = new TimeSpan(totalTicks);
+                                }
+
+
+                            }
+
+                            using (var command = new SQLiteCommand("SELECT SUM(visit_count) FROM urls", connection))
+                            {
+                                using (var reader = command.ExecuteReader())
+                                {
+                                    while (reader.Read())
+                                    {
+                                        totalVisits += reader.GetInt32(0);
+                                    }
+                                }
+                            }
+                            long countTemp;
+                            string titleTemp;
+                            string urlTemp;
+                            string lastTemp;
+
+                            for (int j = 0; j < mostVisited_visits.Length; j++)
+                            {
+                                for (int k = 0; k < mostVisited_visits.Length; k++)
+                                {
+                                    if (mostVisited_visits[j] > mostVisited_visits[k])
+                                    {
+                                        countTemp = mostVisited_visits[j];
+                                        mostVisited_visits[j] = mostVisited_visits[k];
+                                        mostVisited_visits[k] = countTemp;
+
+                                        titleTemp = mostVisited_titles[j];
+                                        mostVisited_titles[j] = mostVisited_titles[k];
+                                        mostVisited_titles[k] = titleTemp;
+
+                                        urlTemp = mostVisited_urls[j];
+                                        mostVisited_urls[j] = mostVisited_urls[k];
+                                        mostVisited_urls[k] = urlTemp;
+
+                                        lastTemp = mostVisited_lastVisits[j];
+                                        mostVisited_lastVisits[j] = mostVisited_lastVisits[k];
+                                        mostVisited_lastVisits[k] = lastTemp;
+                                    }
+                                }
+                            }
+
+                        }
+                        mostVisited();
                     }
-                    catch
-                    {
-                        Form closebrowser = new closeBrowser();
-                        closebrowser.Show();
-                    }
+
                 }
 
-                mostVisited();
+
             }
             else
             {
@@ -778,76 +791,88 @@ namespace Probe
             browserName = "firefox";
             string defaultProfile = "";
 
-
-            string profilesIniPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Mozilla\Firefox\profiles.ini";
-
-            using (FileStream fs = File.OpenRead(profilesIniPath))
-            using (StreamReader sr = new StreamReader(fs))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Microsoft\Edge\User Data\Default\History"))
             {
-                while (!sr.EndOfStream)
+                Process[] processes = Process.GetProcessesByName("firefox");
+
+                if (processes.Length > 0)
                 {
-                    string line = sr.ReadLine();
-                    if (line.StartsWith("Default=Profiles/"))
-                    {
-                        defaultProfile = line.Substring(17);
-                        break;
-                    }
+                    Form frm = new closeBrowser();
+                    frm.Show();
                 }
-            }
-
-            string historyDbPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Mozilla\Firefox\Profiles\" + defaultProfile + @"\places.sqlite";
-            //Profiles/gdms3yut.A
-            using (var connection = new SQLiteConnection("Data Source=" + historyDbPath + ";Version=3;New=False;Compress=True;"))
-            {
-                connection.Open();
-                using (var command = new SQLiteCommand("SELECT url, visit_count, last_visit_date FROM moz_places WHERE visit_count > 0 GROUP BY url ORDER BY visit_count DESC", connection))
+                else
                 {
-                    using (var reader = command.ExecuteReader())
+                    string profilesIniPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Mozilla\Firefox\profiles.ini";
+
+                    using (FileStream fs = File.OpenRead(profilesIniPath))
+                    using (StreamReader sr = new StreamReader(fs))
                     {
-                        int i = 0;
-
-                        while (reader.Read() && i < 10)
+                        while (!sr.EndOfStream)
                         {
-                            Uri uri = new Uri(reader.GetString(0));
-                            string host = uri.Host;
-                            int visits = (reader.GetInt32(1));
-                            bool processed = false;
-
-                            DateTime lastVisit = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(Convert.ToInt64(reader["last_visit_date"]) / 1000000);
-                            //DateTime lastVisit = new DateTime(Convert.ToInt64(reader["last_visit_date"]) * TimeSpan.TicksPerSecond);
-                            string lastVisitString = lastVisit.ToString("dd/MM/yyyy HH:mm tt");
-
-
-                            for (int j = 0; j < 10; j++)
+                            string line = sr.ReadLine();
+                            if (line.StartsWith("Default=Profiles/"))
                             {
-                                if (host == mostVisited_urls[j])
-                                {
-                                    mostVisited_visits[j] += visits;
-                                    processed = true;
-                                    break;
-                                }
+                                defaultProfile = line.Substring(17);
+                                break;
                             }
+                        }
+                    }
 
-                            if (!processed)
+                    string historyDbPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Mozilla\Firefox\Profiles\" + defaultProfile + @"\places.sqlite";
+                    //Profiles/gdms3yut.A
+                    using (var connection = new SQLiteConnection("Data Source=" + historyDbPath + ";Version=3;New=False;Compress=True;"))
+                    {
+                        connection.Open();
+                        using (var command = new SQLiteCommand("SELECT url, visit_count, last_visit_date FROM moz_places WHERE visit_count > 0 GROUP BY url ORDER BY visit_count DESC", connection))
+                        {
+                            using (var reader = command.ExecuteReader())
                             {
-                                for (int j = 0; j < 10; j++)
+                                int i = 0;
+
+                                while (reader.Read() && i < 10)
                                 {
-                                    if (mostVisited_titles[j] == null)
+                                    Uri uri = new Uri(reader.GetString(0));
+                                    string host = uri.Host;
+                                    int visits = (reader.GetInt32(1));
+                                    bool processed = false;
+
+                                    DateTime lastVisit = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(Convert.ToInt64(reader["last_visit_date"]) / 1000000);
+                                    //DateTime lastVisit = new DateTime(Convert.ToInt64(reader["last_visit_date"]) * TimeSpan.TicksPerSecond);
+                                    string lastVisitString = lastVisit.ToString("dd/MM/yyyy HH:mm tt");
+
+
+                                    for (int j = 0; j < 10; j++)
                                     {
-                                        mostVisited_urls[j] = uri.ToString();
-                                        mostVisited_titles[j] = host.ToString();
-                                        mostVisited_visits[j] = visits;
-                                        mostVisited_lastVisits[j] = lastVisitString;
-                                        i++;
-                                        break;
+                                        if (host == mostVisited_urls[j])
+                                        {
+                                            mostVisited_visits[j] += visits;
+                                            processed = true;
+                                            break;
+                                        }
+                                    }
+
+                                    if (!processed)
+                                    {
+                                        for (int j = 0; j < 10; j++)
+                                        {
+                                            if (mostVisited_titles[j] == null)
+                                            {
+                                                mostVisited_urls[j] = uri.ToString();
+                                                mostVisited_titles[j] = host.ToString();
+                                                mostVisited_visits[j] = visits;
+                                                mostVisited_lastVisits[j] = lastVisitString;
+                                                i++;
+                                                break;
+                                            }
+                                        }
                                     }
                                 }
                             }
                         }
+                        mostVisited();
                     }
                 }
             }
-            mostVisited();
         }
 
         //Methods for Opera
@@ -858,12 +883,20 @@ namespace Probe
 
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Opera Software\Opera Stable\History"))
             {
-                historyDbPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Opera Software\Opera Stable\History";
-                using (var connection = new SQLiteConnection("Data Source=" + historyDbPath))
-                {
+                Process[] processes = Process.GetProcessesByName("notepad");
 
-                    try
+                if (processes.Length > 0)
+                {
+                    Form frm = new closeBrowser();
+                    frm.Show();
+                }
+                else
+                {
+                    historyDbPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Opera Software\Opera Stable\History";
+                    using (var connection = new SQLiteConnection("Data Source=" + historyDbPath))
                     {
+
+
                         connection.Open();
 
                         using (var command = new SQLiteCommand("SELECT url, visit_count, last_visit_time FROM urls ORDER BY visit_count DESC", connection))
@@ -1027,16 +1060,11 @@ namespace Probe
                                 }
                             }
                         }
-
-                    }
-                    catch
-                    {
-                        Form closebrowser = new closeBrowser();
-                        closebrowser.Show();
+                        mostVisited();
                     }
                 }
 
-                mostVisited();
+
             }
             else
             {
