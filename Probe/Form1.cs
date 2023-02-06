@@ -1,6 +1,7 @@
 using LiveCharts;
 using LiveCharts.Wpf;
 using Microsoft.Win32;
+using Nager.PublicSuffix;
 using System;
 using System.Data.SQLite;
 using System.Diagnostics;
@@ -129,7 +130,7 @@ namespace Probe
             linkLabel_mostVisited_result4_url.Text = mostVisited_urls[3];
             label_mostVisited_result4_count.Text = "Total visits: " + mostVisited_visits[3].ToString();
             label_mostVisited_result4_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[3].ToString();
-            pictureBox_mostVisited_result4_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[2] + "/";
+            pictureBox_mostVisited_result4_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[3] + "/";
 
             label_mostVisited_result5_title.Text = mostVisited_titles[4];
             linkLabel_mostVisited_result5_url.Text = mostVisited_urls[4];
@@ -228,22 +229,23 @@ namespace Probe
             social_icon10.ImageLocation = "https://api.faviconkit.com/" + social_titles[9] + "/";
 
             long topCount = 0;
-            for (int i = 0; i < 0; i++)
+            for (int i = 0; i < 10; i++)
             {
                 topCount += mostVisited_visits[i];
+                Console.WriteLine(mostVisited_titles[i] + "\n");
             }
 
 
             //Creating pieChart
             Func<ChartPoint, string> labelPoint = chartPoint => string.Format("{1:P}", chartPoint.Y, chartPoint.Participation);
 
-            
+
             SeriesCollection piechartData = new SeriesCollection
             {
 
             };
 
-            
+
             piechartData.Add(
                 new PieSeries
                 {
@@ -378,7 +380,7 @@ namespace Probe
         }
 
         //Methods for Chrome
-        private void button_chrome_Click(object sender, EventArgs e) 
+        private void button_chrome_Click(object sender, EventArgs e)
         {
             browserName = "Chrome";
             string historyDbPath;
@@ -410,10 +412,13 @@ namespace Probe
                                 //Adds most visited data to the variables
                                 int i = 0;
 
+                                var domainParser = new DomainParser(new WebTldRuleProvider());
+
                                 while (reader.Read() && i < 10)
                                 {
                                     Uri uri = new Uri(reader.GetString(0));
-                                    string host = uri.Host;
+                                    var domainInfo = domainParser.Parse(uri);
+                                    string host = domainInfo.RegistrableDomain;
                                     int visits = (reader.GetInt32(1));
                                     bool processed = false;
 
@@ -597,7 +602,6 @@ namespace Probe
 
                 if (!(processes.Length == 0))
                 {
-                    Console.WriteLine("Notepad is running.");
                     Form frm = new closeBrowser();
                     frm.Show();
                 }
@@ -615,10 +619,13 @@ namespace Probe
                                 {
                                     int i = 0;
 
+                                    var domainParser = new DomainParser(new WebTldRuleProvider());
+
                                     while (reader.Read() && i < 10)
                                     {
                                         Uri uri = new Uri(reader.GetString(0));
-                                        string host = uri.Host;
+                                        var domainInfo = domainParser.Parse(uri);
+                                        string host = domainInfo.RegistrableDomain;
                                         int visits = (reader.GetInt32(1));
                                         bool processed = false;
 
@@ -830,10 +837,13 @@ namespace Probe
                             {
                                 int i = 0;
 
+                                var domainParser = new DomainParser(new WebTldRuleProvider());
+
                                 while (reader.Read() && i < 10)
                                 {
                                     Uri uri = new Uri(reader.GetString(0));
-                                    string host = uri.Host;
+                                    var domainInfo = domainParser.Parse(uri);
+                                    string host = domainInfo.RegistrableDomain;
                                     int visits = (reader.GetInt32(1));
                                     bool processed = false;
 
@@ -884,7 +894,7 @@ namespace Probe
 
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Opera Software\Opera Stable\History"))
             {
-                Process[] processes = Process.GetProcessesByName("notepad");
+                Process[] processes = Process.GetProcessesByName("opera");
 
                 if (!(processes.Length == 0))
                 {
@@ -906,10 +916,13 @@ namespace Probe
                             {
                                 int i = 0;
 
+                                var domainParser = new DomainParser(new WebTldRuleProvider());
+
                                 while (reader.Read() && i < 10)
                                 {
                                     Uri uri = new Uri(reader.GetString(0));
-                                    string host = uri.Host;
+                                    var domainInfo = domainParser.Parse(uri);
+                                    string host = domainInfo.RegistrableDomain;
                                     int visits = (reader.GetInt32(1));
                                     bool processed = false;
 
@@ -1072,7 +1085,6 @@ namespace Probe
                 Form noBrowser = new noBrowser();
                 noBrowser.Show();
             }
-            mostVisited();
         }
 
         //Exits the program
