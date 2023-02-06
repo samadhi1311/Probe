@@ -27,7 +27,7 @@ namespace Probe
         public long[] mostVisited_visits = new long[10];
         public string[] mostVisited_lastVisits = new string[10];
 
-        public string[] socialMedia = { "facebook.com", "youtube.com", "whatsapp.com", "instagram.com", "tiktok.com", "twitter.com", "reddit.com", "pinterest.com", "quora.com", "discord.com" };
+        public string[] socialMedia = { "facebook.com", "youtube.com", "whatsapp.com", "instagram.com", "tiktok.com", "twitter.com", "reddit.com", "pinterest.com", "quora.com", "discord.com", "snapchat.com", "telegran.org", "tumblr.com", "linkedin.com", "vimeo.com" };
 
         public string[] social_titles = new string[10];
         public string[] social_urls = new string[10];
@@ -118,7 +118,7 @@ namespace Probe
             linkLabel_mostVisited_result2_url.Text = mostVisited_urls[1];
             label_mostVisited_result2_count.Text = "Total visits: " + mostVisited_visits[1].ToString();
             label_mostVisited_result3_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[1].ToString();
-            pictureBox_mostVisited_result1_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[1] + "/";
+            pictureBox_mostVisited_result2_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[1] + "/";
 
             label_mostVisited_result3_title.Text = mostVisited_titles[2];
             linkLabel_mostVisited_result3_url.Text = mostVisited_urls[2];
@@ -424,7 +424,7 @@ namespace Probe
 
                                     long timestamp = reader.GetInt64(2);
                                     DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
+                                    string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm tt");
 
                                     for (int j = 0; j < 10; j++)
                                     {
@@ -469,7 +469,7 @@ namespace Probe
 
                                     long timestamp = reader.GetInt64(2);
                                     DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
+                                    string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm tt");
 
                                     foreach (string socialMediaDomain in socialMedia)
                                     {
@@ -631,7 +631,7 @@ namespace Probe
 
                                         long timestamp = reader.GetInt64(2);
                                         DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                        string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
+                                        string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm tt");
 
                                         for (int j = 0; j < 10; j++)
                                         {
@@ -676,7 +676,7 @@ namespace Probe
 
                                         long timestamp = reader.GetInt64(2);
                                         DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                        string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
+                                        string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm tt");
 
                                         foreach (string socialMediaDomain in socialMedia)
                                         {
@@ -849,7 +849,7 @@ namespace Probe
 
                                     DateTime lastVisit = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(Convert.ToInt64(reader["last_visit_date"]) / 1000000);
                                     //DateTime lastVisit = new DateTime(Convert.ToInt64(reader["last_visit_date"]) * TimeSpan.TicksPerSecond);
-                                    string lastVisitString = lastVisit.ToString("dd/MM/yyyy HH:mm tt");
+                                    string lastVisitString = lastVisit.ToLocalTime().ToString("dd/MM/yyyy HH:mm tt");
 
 
                                     for (int j = 0; j < 10; j++)
@@ -928,7 +928,7 @@ namespace Probe
 
                                     long timestamp = reader.GetInt64(2);
                                     DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
+                                    string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm tt");
 
                                     for (int j = 0; j < 10; j++)
                                     {
@@ -973,7 +973,7 @@ namespace Probe
 
                                     long timestamp = reader.GetInt64(2);
                                     DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToString("dd/MM/yyyy HH:mm tt");
+                                    string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm tt");
 
                                     foreach (string socialMediaDomain in socialMedia)
                                     {
