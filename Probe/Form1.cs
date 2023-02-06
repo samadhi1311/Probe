@@ -378,18 +378,18 @@ namespace Probe
         }
 
         //Methods for Chrome
-        private void button_chrome_Click(object sender, EventArgs e)
+        private void button_chrome_Click(object sender, EventArgs e) 
         {
             browserName = "Chrome";
             string historyDbPath;
 
-            //Checks if the Hostory database exists. If true, connects to the database. else, displays browser not found error (noBrowser Form)
+            //Checks if the History database exists. If true, connects to the database. else, displays browser not found error (noBrowser Form)
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Google\Chrome\User Data\Default\History"))
             {
 
                 Process[] processes = Process.GetProcessesByName("chrome");
 
-                if (processes.Length > 0)
+                if (!(processes.Length == 0))
                 {
                     Form frm = new closeBrowser();
                     frm.Show();
@@ -595,7 +595,7 @@ namespace Probe
 
                 Process[] processes = Process.GetProcessesByName("msedge");
 
-                if (processes.Length > 0)
+                if (!(processes.Length == 0))
                 {
                     Console.WriteLine("Notepad is running.");
                     Form frm = new closeBrowser();
@@ -796,7 +796,7 @@ namespace Probe
             {
                 Process[] processes = Process.GetProcessesByName("firefox");
 
-                if (processes.Length > 0)
+                if (!(processes.Length == 0))
                 {
                     Form frm = new closeBrowser();
                     frm.Show();
@@ -886,7 +886,7 @@ namespace Probe
             {
                 Process[] processes = Process.GetProcessesByName("notepad");
 
-                if (processes.Length > 0)
+                if (!(processes.Length == 0))
                 {
                     Form frm = new closeBrowser();
                     frm.Show();
