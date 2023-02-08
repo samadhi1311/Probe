@@ -117,7 +117,7 @@ namespace Probe
             label_mostVisited_result2_title.Text = mostVisited_titles[1];
             linkLabel_mostVisited_result2_url.Text = mostVisited_urls[1];
             label_mostVisited_result2_count.Text = "Total visits: " + mostVisited_visits[1].ToString();
-            label_mostVisited_result3_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[1].ToString();
+            label_mostVisited_result2_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[1].ToString();
             pictureBox_mostVisited_result2_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[1] + "/";
 
             label_mostVisited_result3_title.Text = mostVisited_titles[2];
