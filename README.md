@@ -4,7 +4,7 @@ Probe is a desktop application being developed as an education project which dis
 
 ![image](https://user-images.githubusercontent.com/69573759/216881452-bc8686fb-3780-4c78-b7cb-dc73c1cd4bb3.png)
 
-![image](https://user-images.githubusercontent.com/69573759/216881636-1fe0a215-0eb3-4833-b77c-a51a34389490.png)
+![image](https://user-images.githubusercontent.com/69573759/217550378-cc85355f-2ab4-45ed-a55f-bb8f39a56267.png)
 
 ![image](https://user-images.githubusercontent.com/69573759/216881666-88430dca-6f68-4d32-815f-ef63f53e43a6.png)
 
