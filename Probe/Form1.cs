@@ -108,121 +108,121 @@ namespace Probe
         {
             loader();
 
-            label_mostVisited_result1_title.Text = mostVisited_titles[0];
+            label_mostVisited_result1_title.Text = "1. " + mostVisited_titles[0];
             linkLabel_mostVisited_result1_url.Text = mostVisited_urls[0];
             label_mostVisited_result1_count.Text = "Total visits: " + mostVisited_visits[0].ToString();
             label_mostVisited_result1_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[0].ToString();
             pictureBox_mostVisited_result1_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[0] + "/";
 
-            label_mostVisited_result2_title.Text = mostVisited_titles[1];
+            label_mostVisited_result2_title.Text = "2. " + mostVisited_titles[1];
             linkLabel_mostVisited_result2_url.Text = mostVisited_urls[1];
             label_mostVisited_result2_count.Text = "Total visits: " + mostVisited_visits[1].ToString();
             label_mostVisited_result2_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[1].ToString();
             pictureBox_mostVisited_result2_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[1] + "/";
 
-            label_mostVisited_result3_title.Text = mostVisited_titles[2];
+            label_mostVisited_result3_title.Text = "3. " + mostVisited_titles[2];
             linkLabel_mostVisited_result3_url.Text = mostVisited_urls[2];
             label_mostVisited_result3_count.Text = "Total visits: " + mostVisited_visits[2].ToString();
             label_mostVisited_result3_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[2].ToString();
             pictureBox_mostVisited_result3_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[2] + "/";
 
-            label_mostVisited_result4_title.Text = mostVisited_titles[3];
+            label_mostVisited_result4_title.Text = "4. " + mostVisited_titles[3];
             linkLabel_mostVisited_result4_url.Text = mostVisited_urls[3];
             label_mostVisited_result4_count.Text = "Total visits: " + mostVisited_visits[3].ToString();
             label_mostVisited_result4_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[3].ToString();
             pictureBox_mostVisited_result4_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[3] + "/";
 
-            label_mostVisited_result5_title.Text = mostVisited_titles[4];
+            label_mostVisited_result5_title.Text = "5. " + mostVisited_titles[4];
             linkLabel_mostVisited_result5_url.Text = mostVisited_urls[4];
             label_mostVisited_result5_count.Text = "Total visits: " + mostVisited_visits[4].ToString();
             label_mostVisited_result5_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[4].ToString();
             pictureBox_mostVisited_result5_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[4] + "/";
 
-            label_mostVisited_result6_title.Text = mostVisited_titles[5];
+            label_mostVisited_result6_title.Text = "6. " + mostVisited_titles[5];
             linkLabel_mostVisited_result6_url.Text = mostVisited_urls[5];
             label_mostVisited_result6_count.Text = "Total visits: " + mostVisited_visits[5].ToString();
             label_mostVisited_result6_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[5].ToString();
             pictureBox_mostVisited_result6_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[5] + "/";
 
-            label_mostVisited_result7_title.Text = mostVisited_titles[6];
+            label_mostVisited_result7_title.Text = "7. " + mostVisited_titles[6];
             linkLabel_mostVisited_result7_url.Text = mostVisited_urls[6];
             label_mostVisited_result7_count.Text = "Total visits: " + mostVisited_visits[6].ToString();
             label_mostVisited_result7_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[6].ToString();
             pictureBox_mostVisited_result7_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[6] + "/";
 
-            label_mostVisited_result8_title.Text = mostVisited_titles[7];
+            label_mostVisited_result8_title.Text = "8. " + mostVisited_titles[7];
             linkLabel_mostVisited_result8_url.Text = mostVisited_urls[7];
             label_mostVisited_result8_count.Text = "Total visits: " + mostVisited_visits[7].ToString();
             label_mostVisited_result8_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[7].ToString();
             pictureBox_mostVisited_result8_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[7] + "/";
 
-            label_mostVisited_result9_title.Text = mostVisited_titles[8];
+            label_mostVisited_result9_title.Text = "9. " + mostVisited_titles[8];
             linkLabel_mostVisited_result9_url.Text = mostVisited_urls[8];
             label_mostVisited_result9_count.Text = "Total visits: " + mostVisited_visits[8].ToString();
             label_mostVisited_result9_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[8].ToString();
             pictureBox_mostVisited_result9_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[8] + "/";
 
-            label_mostVisited_result10_title.Text = mostVisited_titles[9];
+            label_mostVisited_result10_title.Text = "10. " + mostVisited_titles[9];
             linkLabel_mostVisited_result10_url.Text = mostVisited_urls[9];
             label_mostVisited_result10_count.Text = "Total visits: " + mostVisited_visits[9].ToString();
             label_mostVisited_result10_lastVisit.Text = "Last visit: " + mostVisited_lastVisits[9].ToString();
             pictureBox_mostVisited_result10_favicon.ImageLocation = "https://api.faviconkit.com/" + mostVisited_titles[9] + "/";
 
-            social_title1.Text = social_titles[0];
+            social_title1.Text = "1. " + social_titles[0];
             social_url1.Text = social_urls[0];
             social_count1.Text = "Total visits: " + social_visits[0].ToString();
             social_last1.Text = "Last visit: " + social_lastVisits[0];
             social_icon1.ImageLocation = "https://api.faviconkit.com/" + social_titles[0] + "/";
 
-            social_title2.Text = social_titles[1];
+            social_title2.Text = "2. " + social_titles[1];
             social_url2.Text = social_urls[1];
             social_count2.Text = "Total visits: " + social_visits[1].ToString();
             social_last2.Text = "Last visit: " + social_lastVisits[1];
             social_icon2.ImageLocation = "https://api.faviconkit.com/" + social_titles[1] + "/";
 
-            social_title3.Text = social_titles[2];
+            social_title3.Text = "3. " + social_titles[2];
             social_url3.Text = social_urls[2];
             social_count3.Text = "Total visits: " + social_visits[2].ToString();
             social_last3.Text = "Last visit: " + social_lastVisits[2];
             social_icon3.ImageLocation = "https://api.faviconkit.com/" + social_titles[2] + "/";
 
-            social_title4.Text = social_titles[3];
+            social_title4.Text = "4. " + social_titles[3];
             social_url4.Text = social_urls[3];
             social_count4.Text = "Total visits: " + social_visits[3].ToString();
             social_last4.Text = "Last visit: " + social_lastVisits[3];
             social_icon4.ImageLocation = "https://api.faviconkit.com/" + social_titles[3] + "/";
 
-            social_title5.Text = social_titles[4];
+            social_title5.Text = "5. " + social_titles[4];
             social_url5.Text = social_urls[4];
             social_count5.Text = "Total visits: " + social_visits[4].ToString();
             social_last5.Text = "Last visit: " + social_lastVisits[4];
             social_icon5.ImageLocation = "https://api.faviconkit.com/" + social_titles[4] + "/";
 
-            social_title6.Text = social_titles[5];
+            social_title6.Text = "6. " + social_titles[5];
             social_url6.Text = social_urls[5];
             social_count6.Text = "Total visits: " + social_visits[5].ToString();
             social_last6.Text = "Last visit: " + social_lastVisits[5];
             social_icon6.ImageLocation = "https://api.faviconkit.com/" + social_titles[5] + "/";
 
-            social_title7.Text = social_titles[6];
+            social_title7.Text = "7. " + social_titles[6];
             social_url7.Text = social_urls[6];
             social_count7.Text = "Total visits: " + social_visits[6].ToString();
             social_last7.Text = "Last visit: " + social_lastVisits[6];
             social_icon7.ImageLocation = "https://api.faviconkit.com/" + social_titles[6] + "/";
 
-            social_title8.Text = social_titles[7];
+            social_title8.Text = "8. " + social_titles[7];
             social_url8.Text = social_urls[7];
             social_count8.Text = "Total visits: " + social_visits[7].ToString();
             social_last8.Text = "Last visit: " + social_lastVisits[7];
             social_icon8.ImageLocation = "https://api.faviconkit.com/" + social_titles[7] + "/";
 
-            social_title9.Text = social_titles[8];
+            social_title9.Text = "9. " + social_titles[8];
             social_url9.Text = social_urls[8];
             social_count9.Text = "Total visits: " + social_visits[8].ToString();
             social_last9.Text = "Last visit: " + social_lastVisits[8];
             social_icon9.ImageLocation = "https://api.faviconkit.com/" + social_titles[8] + "/";
 
-            social_title10.Text = social_titles[9];
+            social_title10.Text = "10. " + social_titles[9];
             social_url10.Text = social_urls[9];
             social_count10.Text = "Total visits: " + social_visits[9].ToString();
             social_last10.Text = "Last visit: " + social_lastVisits[9];
@@ -232,7 +232,6 @@ namespace Probe
             for (int i = 0; i < 10; i++)
             {
                 topCount += mostVisited_visits[i];
-                Console.WriteLine(mostVisited_titles[i] + "\n");
             }
 
 
@@ -424,7 +423,7 @@ namespace Probe
 
                                     long timestamp = reader.GetInt64(2);
                                     DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm tt");
+                                    string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
 
                                     for (int j = 0; j < 10; j++)
                                     {
@@ -469,7 +468,7 @@ namespace Probe
 
                                     long timestamp = reader.GetInt64(2);
                                     DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm tt");
+                                    string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
 
                                     foreach (string socialMediaDomain in socialMedia)
                                     {
@@ -631,7 +630,7 @@ namespace Probe
 
                                         long timestamp = reader.GetInt64(2);
                                         DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                        string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm tt");
+                                        string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
 
                                         for (int j = 0; j < 10; j++)
                                         {
@@ -676,7 +675,7 @@ namespace Probe
 
                                         long timestamp = reader.GetInt64(2);
                                         DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                        string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm tt");
+                                        string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
 
                                         foreach (string socialMediaDomain in socialMedia)
                                         {
@@ -849,7 +848,7 @@ namespace Probe
 
                                     DateTime lastVisit = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(Convert.ToInt64(reader["last_visit_date"]) / 1000000);
                                     //DateTime lastVisit = new DateTime(Convert.ToInt64(reader["last_visit_date"]) * TimeSpan.TicksPerSecond);
-                                    string lastVisitString = lastVisit.ToLocalTime().ToString("dd/MM/yyyy HH:mm tt");
+                                    string lastVisitString = lastVisit.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
 
 
                                     for (int j = 0; j < 10; j++)
@@ -928,7 +927,7 @@ namespace Probe
 
                                     long timestamp = reader.GetInt64(2);
                                     DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm tt");
+                                    string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
 
                                     for (int j = 0; j < 10; j++)
                                     {
@@ -973,7 +972,7 @@ namespace Probe
 
                                     long timestamp = reader.GetInt64(2);
                                     DateTime lastVisitDate = new DateTime(1601, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(timestamp / 1000000);
-                                    string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy HH:mm tt");
+                                    string lastVisitDateString = lastVisitDate.ToLocalTime().ToString("dd/MM/yyyy hh:mm tt");
 
                                     foreach (string socialMediaDomain in socialMedia)
                                     {
