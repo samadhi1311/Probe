@@ -1,6 +1,6 @@
-**Probe - Browser Insights**
+# Probe - Browser Insights
 
-Probe is a desktop application being developed as an education project which displays valuable information about your web browser usage.
+Probe is a desktop application being developed as an education project that displays valuable information about your web browser usage.
 
 ![image](https://user-images.githubusercontent.com/69573759/216881452-bc8686fb-3780-4c78-b7cb-dc73c1cd4bb3.png)
 
